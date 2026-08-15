@@ -1,0 +1,71 @@
+DOENÇA ARTERIAL CORONARIANA: CAUSAS, SINTOMAS E PREVENÇÃO
+CardioIA - Material de apoio textual (Fase 1)
+Texto de caráter educativo, redigido para fins didáticos do projeto CardioIA.
+
+O QUE É A DOENÇA ARTERIAL CORONARIANA
+
+A doença arterial coronariana (DAC) é uma condição em que as artérias
+responsáveis por irrigar o músculo do coração, chamadas artérias
+coronárias, se estreitam progressivamente devido ao acúmulo de placas
+de gordura, colesterol e outras substâncias em suas paredes internas,
+processo conhecido como aterosclerose. Com o passar do tempo, esse
+estreitamento reduz o fluxo de sangue rico em oxigênio que chega ao
+coração, podendo causar dor no peito, falta de ar e, em casos mais
+graves, infarto agudo do miocárdio.
+
+FATORES DE RISCO
+
+Diversos fatores aumentam a probabilidade de uma pessoa desenvolver
+doença arterial coronariana ao longo da vida. Entre os principais
+estão a hipertensão arterial não controlada, o colesterol elevado, o
+tabagismo, o diabetes mellitus, o sedentarismo, a obesidade, o
+histórico familiar de doenças cardíacas e o envelhecimento. Fatores
+emocionais, como estresse crônico, e hábitos alimentares ricos em
+gorduras saturadas e açúcares também contribuem para o avanço da
+aterosclerose. É importante destacar que muitos desses fatores são
+modificáveis, o que reforça a importância de ações de prevenção e
+educação em saúde.
+
+PRINCIPAIS SINTOMAS
+
+O sintoma mais característico da doença arterial coronariana é a
+angina, uma sensação de aperto, peso ou queimação no peito, que pode
+se espalhar para o braço esquerdo, o pescoço, a mandíbula ou as
+costas. Outros sinais incluem cansaço incomum, falta de ar durante
+esforços físicos, tontura, suor frio e palpitações. Em algumas
+pessoas, especialmente mulheres, idosos e pessoas com diabetes, os
+sintomas podem ser mais discretos ou atípicos, o que dificulta o
+diagnóstico precoce e reforça a importância de exames de rotina.
+
+DIAGNÓSTICO
+
+O diagnóstico da doença arterial coronariana costuma envolver uma
+combinação de avaliação clínica, exames laboratoriais e exames de
+imagem. O eletrocardiograma (ECG) permite identificar alterações no
+ritmo e na atividade elétrica do coração. Testes de esforço,
+ecocardiogramas, angiotomografia e cateterismo cardíaco também são
+utilizados para avaliar o grau de obstrução das artérias e orientar o
+tratamento mais adequado para cada paciente.
+
+PREVENÇÃO E TRATAMENTO
+
+A prevenção da doença arterial coronariana passa por mudanças no
+estilo de vida, como a adoção de uma alimentação equilibrada, a
+prática regular de atividade física, o abandono do tabagismo e o
+controle rigoroso da pressão arterial, do colesterol e da glicemia.
+Quando a doença já está instalada, o tratamento pode incluir uso de
+medicamentos para controle dos fatores de risco, procedimentos como
+angioplastia com colocação de stent, ou cirurgia de revascularização
+do miocárdio em casos mais avançados. O acompanhamento médico
+contínuo é essencial para reduzir o risco de complicações graves,
+como o infarto e a insuficiência cardíaca.
+
+RELEVÂNCIA PARA PROJETOS DE INTELIGÊNCIA ARTIFICIAL
+
+Textos como este podem servir de base para tarefas de Processamento
+de Linguagem Natural (NLP) em projetos de saúde, como extração de
+sintomas e fatores de risco mencionados em prontuários, classificação
+de tópicos relacionados a doenças cardiovasculares, geração de
+resumos automáticos para apoiar profissionais de saúde e construção
+de chatbots educativos capazes de esclarecer dúvidas básicas de
+pacientes sobre a doença arterial coronariana.

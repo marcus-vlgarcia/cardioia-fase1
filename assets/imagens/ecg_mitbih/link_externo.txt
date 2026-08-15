@@ -1,0 +1,3 @@
+LINK_GOOGLE_DRIVE_OU_ONEDRIVE=[PREENCHER APÓS O UPLOAD DOS DADOS PREPARADOS]
+ACESSO=[qualquer pessoa com o link — leitor, conforme exigência da atividade]
+DATA_DA_ULTIMA_VERIFICACAO=[PREENCHER]
