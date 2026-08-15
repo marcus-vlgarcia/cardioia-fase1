@@ -18,17 +18,17 @@ Motivo de usarmos dados simulados:
 Saída: data/numeric/dataset_pacientes_cardiacos.csv
 """
 
+import argparse
+import os
 import numpy as np
 import pandas as pd
 
-# Seed fixa para reprodutibilidade (qualquer pessoa que rodar o script
-# gera exatamente a mesma base de dados)
-RNG = np.random.default_rng(seed=42)
-
-N_PACIENTES = 300  # acima do mínimo de 100 exigido no enunciado
+N_PACIENTES_PADRAO = 300  # acima do mínimo de 100 exigido no enunciado
+CAMINHO_PADRAO = "../data/numeric/dataset_pacientes_cardiacos.csv"
 
 
-def gerar_dataset(n: int) -> pd.DataFrame:
+def gerar_dataset(n: int, seed: int = 42, id_inicial: int = 1) -> pd.DataFrame:
+    RNG = np.random.default_rng(seed=seed)
     idade = RNG.integers(29, 80, size=n)
 
     # Sexo: 0 = feminino, 1 = masculino (aprox. distribuição do dataset
@@ -109,7 +109,9 @@ def gerar_dataset(n: int) -> pd.DataFrame:
 
     df = pd.DataFrame(
         {
-            "paciente_id": [f"PAC{str(i).zfill(4)}" for i in range(1, n + 1)],
+            "paciente_id": [
+                f"PAC{str(i).zfill(4)}" for i in range(id_inicial, id_inicial + n)
+            ],
             "idade": idade,
             "sexo": sexo,  # 0 = feminino, 1 = masculino
             "tipo_dor_peito": tipo_dor_peito,
@@ -132,9 +134,69 @@ def gerar_dataset(n: int) -> pd.DataFrame:
     return df
 
 
+def main():
+    parser = argparse.ArgumentParser(
+        description="Gera dataset simulado de pacientes cardíacos para o CardioIA."
+    )
+    parser.add_argument(
+        "-n", "--n-pacientes", type=int, default=N_PACIENTES_PADRAO,
+        help=f"Quantidade de linhas/pacientes a gerar (padrão: {N_PACIENTES_PADRAO}).",
+    )
+    parser.add_argument(
+        "-o", "--out", type=str, default=CAMINHO_PADRAO,
+        help=f"Caminho do arquivo CSV de saída (padrão: {CAMINHO_PADRAO}).",
+    )
+    parser.add_argument(
+        "-m", "--modo", choices=["substituir", "anexar"], default="substituir",
+        help=(
+            "'substituir' (padrão) sobrescreve o arquivo com um novo dataset do zero. "
+            "'anexar' mantém as linhas já existentes no arquivo e adiciona novas linhas "
+            "após elas, continuando a numeração de paciente_id automaticamente."
+        ),
+    )
+    parser.add_argument(
+        "-s", "--seed", type=int, default=None,
+        help=(
+            "Semente aleatória. Se não informado: usa 42 no modo 'substituir' "
+            "(sempre reproduz o mesmo dataset original), ou uma semente aleatória "
+            "diferente a cada execução no modo 'anexar' (para gerar linhas novas e "
+            "não repetir os mesmos pacientes)."
+        ),
+    )
+    args = parser.parse_args()
+
+    id_inicial = 1
+    df_existente = None
+
+    if args.modo == "anexar" and os.path.exists(args.out):
+        df_existente = pd.read_csv(args.out)
+        # Continua a numeração de paciente_id a partir do maior ID já existente
+        maior_id = (
+            df_existente["paciente_id"].str.replace("PAC", "", regex=False).astype(int).max()
+        )
+        id_inicial = maior_id + 1
+
+    seed = args.seed if args.seed is not None else (42 if args.modo == "substituir" else None)
+    if seed is None:
+        # modo 'anexar' sem --seed: gera uma semente diferente a cada execução,
+        # para que as novas linhas não sejam idênticas às já existentes
+        seed = np.random.default_rng().integers(0, 1_000_000)
+
+    df_novo = gerar_dataset(args.n_pacientes, seed=seed, id_inicial=id_inicial)
+
+    if args.modo == "anexar" and df_existente is not None:
+        df_final = pd.concat([df_existente, df_novo], ignore_index=True)
+    else:
+        df_final = df_novo
+
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    df_final.to_csv(args.out, index=False, encoding="utf-8")
+
+    print(f"Modo: {args.modo} | seed usada: {seed}")
+    print(f"Linhas novas geradas: {len(df_novo)} | Total no arquivo agora: {len(df_final)}")
+    print(f"Arquivo salvo em -> {args.out}")
+    print(df_final["doenca_cardiaca"].value_counts(normalize=True))
+
+
 if __name__ == "__main__":
-    df = gerar_dataset(N_PACIENTES)
-    out_path = "../data/numeric/dataset_pacientes_cardiacos.csv"
-    df.to_csv(out_path, index=False, encoding="utf-8")
-    print(f"Dataset gerado com {len(df)} linhas -> {out_path}")
-    print(df["doenca_cardiaca"].value_counts(normalize=True))
+    main()

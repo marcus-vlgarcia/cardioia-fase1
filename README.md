@@ -218,11 +218,54 @@ dados de teste adicionais ou dados balanceados por classe.
 
 ```bash
 cd scripts
-python3 gerar_dataset_numerico.py   # gera data/numeric/dataset_pacientes_cardiacos.csv
+python3 gerar_dataset_numerico.py   # gera data/numeric/dataset_pacientes_cardiacos.csv (300 linhas)
 python3 gerar_imagens_ecg.py        # gera imagens de ECG sintéticas alternativas (opcional)
 ```
 
 Dependências: `numpy`, `pandas`, `matplotlib`.
+
+**Gerando mais dados numéricos (opcional):** `gerar_dataset_numerico.py`
+aceita argumentos de linha de comando para controlar quantidade, arquivo
+de saída e se deve substituir ou anexar ao arquivo existente:
+
+```bash
+# Sobrescreve o arquivo padrão com um dataset novo de N linhas
+python3 gerar_dataset_numerico.py -n 500
+
+# Gera um CSV totalmente separado, sem tocar no dataset principal
+python3 gerar_dataset_numerico.py -n 150 -o ../data/numeric/dataset_extra.csv
+
+# Mantém as linhas já existentes e ACRESCENTA 300 linhas novas ao final
+# (paciente_id continua a numeração automaticamente, sem repetir IDs)
+python3 gerar_dataset_numerico.py -n 300 -m anexar
+```
+
+No modo `anexar`, cada execução usa uma semente aleatória diferente por
+padrão (para não repetir os mesmos pacientes); no modo `substituir`
+(padrão), a semente é fixa (42), garantindo que rodar o script do zero
+sempre reproduza o mesmo dataset original de 300 linhas.
+
+**Gerando mais imagens sintéticas de ECG (opcional):** o script
+`gerar_imagens_ecg.py` funciona da mesma forma — quantidade, pasta de
+saída e modo substituir/anexar são todos configuráveis:
+
+```bash
+# Sobrescreve a pasta padrão com N imagens novas
+python3 gerar_imagens_ecg.py -n 50
+
+# Gera uma pasta totalmente nova, separada da principal
+python3 gerar_imagens_ecg.py -n 30 -o ../assets/imagens/ecg_extra
+
+# Mantém as imagens já existentes na pasta e ACRESCENTA 40 novas
+# (numeração continua automaticamente, ex.: ecg_0101.png, ecg_0102.png...)
+python3 gerar_imagens_ecg.py -n 40 -m anexar
+```
+
+Assim como no script numérico, `substituir` usa semente fixa (7) por
+padrão, e `anexar` usa uma semente diferente a cada execução. As
+imagens geradas por este script vão para `assets/imagens/ecg_sintetico/`
+(ou a pasta indicada em `-o`), nunca em `assets/imagens/ecg_mitbih/`,
+que é reservada às imagens reais do PhysioNet.
 
 As imagens reais de `assets/imagens/ecg_mitbih/` já estão prontas no
 repositório; sua proveniência pode ser reconferida a qualquer momento

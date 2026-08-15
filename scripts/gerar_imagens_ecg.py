@@ -2,36 +2,45 @@
 CardioIA - Fase 1: Batimentos de Dados
 Gerador de imagens SIMULADAS de sinais de eletrocardiograma (ECG).
 
-STATUS NESTA ENTREGA: este script NÃO é mais a fonte principal de
-imagens do projeto. As imagens usadas em `assets/imagens/ecg_mitbih/`
-são REAIS, derivadas da MIT-BIH Arrhythmia Database (PhysioNet) — ver
+STATUS NESTA ENTREGA: este script NÃO é a fonte principal de imagens do
+projeto. As imagens usadas em `assets/imagens/ecg_mitbih/` são REAIS,
+derivadas da MIT-BIH Arrhythmia Database (PhysioNet) — ver
 `assets/imagens/ecg_mitbih/README.md` e `manifesto_imagens.csv` para
 proveniência completa.
 
-Este gerador foi a solução inicial adotada enquanto não tínhamos acesso
-a imagens reais (o ambiente de desenvolvimento não tem acesso à
-internet para baixar datasets). Ele é mantido no repositório como
-alternativa/reserva, útil para:
-- gerar dados de teste adicionais sem depender de download externo;
-- criar exemplos sintéticos balanceados por classe (normal,
-  bradicardia, taquicardia, arritmia) para testes rápidos de pipeline
-  antes de rodar sobre a base real.
+Este gerador é mantido no repositório como alternativa/reserva, útil
+para criar dados de teste adicionais ou exemplos sintéticos balanceados
+por classe (normal, bradicardia, taquicardia, arritmia) sem depender de
+download externo.
 
-Saída (se executado): assets/imagens/ecg_sintetico/ecg_0001.png ... ecg_0100.png
-(pasta separada da base real, para nunca sobrescrever ou se misturar
-com as imagens de assets/imagens/ecg_mitbih/)
+Uso básico (roda de dentro da pasta scripts/):
+
+    python3 gerar_imagens_ecg.py
+        -> gera 100 imagens em ../assets/imagens/ecg_sintetico/
+
+    python3 gerar_imagens_ecg.py -n 50
+        -> gera 50 imagens (substituindo a pasta padrão)
+
+    python3 gerar_imagens_ecg.py -n 30 -o ../assets/imagens/ecg_extra
+        -> gera 30 imagens em uma pasta nova, separada
+
+    python3 gerar_imagens_ecg.py -n 40 -m anexar
+        -> mantém as imagens já existentes na pasta e ACRESCENTA 40 novas,
+           continuando a numeração automaticamente (não sobrescreve nada)
 """
 
+import argparse
+import glob
 import os
+import re
+
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-RNG = np.random.default_rng(seed=7)
-N_IMAGENS = 100
-OUT_DIR = "../assets/imagens/ecg_sintetico"
-os.makedirs(OUT_DIR, exist_ok=True)
+N_IMAGENS_PADRAO = 100
+OUT_DIR_PADRAO = "../assets/imagens/ecg_sintetico"
 
 
 def batimento_pqrst(t, offset=0.0, amp_r=1.0):
@@ -45,35 +54,35 @@ def batimento_pqrst(t, offset=0.0, amp_r=1.0):
     return onda
 
 
-def gerar_traçado(tipo: str, duracao_s: float = 4.0, fs: int = 250):
+def gerar_traçado(tipo: str, rng: np.random.Generator, duracao_s: float = 4.0, fs: int = 250):
     t = np.linspace(0, duracao_s, int(duracao_s * fs))
     sinal = np.zeros_like(t)
 
     if tipo == "normal":
-        bpm = RNG.uniform(60, 100)
+        bpm = rng.uniform(60, 100)
     elif tipo == "bradicardia":
-        bpm = RNG.uniform(35, 59)
+        bpm = rng.uniform(35, 59)
     elif tipo == "taquicardia":
-        bpm = RNG.uniform(101, 160)
+        bpm = rng.uniform(101, 160)
     else:  # arritmia_ectopica
-        bpm = RNG.uniform(60, 100)
+        bpm = rng.uniform(60, 100)
 
     intervalo = 60.0 / bpm
     tempo_batida = intervalo
     while tempo_batida < duracao_s:
         amp_r = 1.0
-        if tipo == "arritmia_ectopica" and RNG.random() < 0.18:
+        if tipo == "arritmia_ectopica" and rng.random() < 0.18:
             tempo_batida += intervalo * 0.55  # extrassístole (batida precoce)
             amp_r = 0.75
         sinal += batimento_pqrst(t, offset=tempo_batida, amp_r=amp_r)
         tempo_batida += intervalo
 
     # ruído leve simulando captação do eletrodo
-    sinal += RNG.normal(0, 0.015, size=t.shape)
+    sinal += rng.normal(0, 0.015, size=t.shape)
     return t, sinal, round(bpm)
 
 
-def salvar_imagem(t, sinal, tipo, bpm, idx):
+def salvar_imagem(t, sinal, tipo, bpm, idx, out_dir):
     fig, ax = plt.subplots(figsize=(4, 2.4), dpi=100)
     ax.plot(t, sinal, color="black", linewidth=0.9)
     ax.set_facecolor("#fdeeee")
@@ -88,17 +97,81 @@ def salvar_imagem(t, sinal, tipo, bpm, idx):
     ax.set_yticklabels([])
     ax.set_title(f"ECG simulado | {tipo} | ~{bpm} bpm", fontsize=8)
     fig.tight_layout(pad=0.4)
-    fig.savefig(f"{OUT_DIR}/ecg_{idx:04d}.png")
+    fig.savefig(f"{out_dir}/ecg_{idx:04d}.png")
     plt.close(fig)
 
 
-if __name__ == "__main__":
-    tipos = RNG.choice(
-        ["normal", "normal", "bradicardia", "taquicardia", "arritmia_ectopica"],
-        size=N_IMAGENS,
-    )
-    for i, tipo in enumerate(tipos, start=1):
-        t, sinal, bpm = gerar_traçado(tipo)
-        salvar_imagem(t, sinal, tipo, bpm, i)
+def proximo_indice_inicial(out_dir: str) -> int:
+    """Olha os arquivos ecg_XXXX.png já existentes na pasta e retorna o
+    próximo número livre, para o modo 'anexar' nunca sobrescrever nada."""
+    existentes = glob.glob(os.path.join(out_dir, "ecg_*.png"))
+    maior = 0
+    for caminho in existentes:
+        m = re.search(r"ecg_(\d+)\.png$", os.path.basename(caminho))
+        if m:
+            maior = max(maior, int(m.group(1)))
+    return maior + 1
 
-    print(f"{N_IMAGENS} imagens de ECG simuladas geradas em {OUT_DIR}")
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Gera imagens sintéticas de ECG para o CardioIA."
+    )
+    parser.add_argument(
+        "-n", "--n-imagens", type=int, default=N_IMAGENS_PADRAO,
+        help=f"Quantidade de imagens a gerar (padrão: {N_IMAGENS_PADRAO}).",
+    )
+    parser.add_argument(
+        "-o", "--out-dir", type=str, default=OUT_DIR_PADRAO,
+        help=f"Pasta de saída das imagens (padrão: {OUT_DIR_PADRAO}).",
+    )
+    parser.add_argument(
+        "-m", "--modo", choices=["substituir", "anexar"], default="substituir",
+        help=(
+            "'substituir' (padrão) apaga as imagens ecg_*.png já existentes na "
+            "pasta e gera um novo conjunto do zero, numerado a partir de 0001. "
+            "'anexar' mantém as imagens já existentes e adiciona novas após elas, "
+            "continuando a numeração automaticamente."
+        ),
+    )
+    parser.add_argument(
+        "-s", "--seed", type=int, default=None,
+        help=(
+            "Semente aleatória. Se não informado: usa 7 no modo 'substituir' "
+            "(sempre reproduz o mesmo conjunto original), ou uma semente "
+            "diferente a cada execução no modo 'anexar' (para não repetir "
+            "os mesmos traçados)."
+        ),
+    )
+    args = parser.parse_args()
+
+    os.makedirs(args.out_dir, exist_ok=True)
+
+    if args.modo == "substituir":
+        for f in glob.glob(os.path.join(args.out_dir, "ecg_*.png")):
+            os.remove(f)
+        idx_inicial = 1
+    else:
+        idx_inicial = proximo_indice_inicial(args.out_dir)
+
+    seed = args.seed if args.seed is not None else (7 if args.modo == "substituir" else None)
+    if seed is None:
+        seed = int(np.random.default_rng().integers(0, 1_000_000))
+    rng = np.random.default_rng(seed=seed)
+
+    tipos = rng.choice(
+        ["normal", "normal", "bradicardia", "taquicardia", "arritmia_ectopica"],
+        size=args.n_imagens,
+    )
+    for offset, tipo in enumerate(tipos):
+        idx = idx_inicial + offset
+        t, sinal, bpm = gerar_traçado(tipo, rng)
+        salvar_imagem(t, sinal, tipo, bpm, idx, args.out_dir)
+
+    total_na_pasta = len(glob.glob(os.path.join(args.out_dir, "ecg_*.png")))
+    print(f"Modo: {args.modo} | seed usada: {seed}")
+    print(f"Imagens novas geradas: {args.n_imagens} | Total agora em {args.out_dir}: {total_na_pasta}")
+
+
+if __name__ == "__main__":
+    main()
