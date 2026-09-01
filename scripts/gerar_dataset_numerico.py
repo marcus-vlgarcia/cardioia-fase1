@@ -1,90 +1,80 @@
 """
 CardioIA - Fase 1: Batimentos de Dados
-Gerador de dataset numérico SIMULADO de pacientes cardíacos.
+Gerador de dados simulados para exercícios acadêmicos.
 
-Este script NÃO utiliza dados reais de pacientes. Ele gera uma base
-sintética, mas estatisticamente plausível, inspirada em variáveis
-clínicas comumente usadas em estudos de cardiologia (ex.: datasets
-públicos como o "Heart Disease UCI"), respeitando faixas de valores
-realistas descritas na literatura médica geral.
-
-Motivo de usarmos dados simulados:
-- Dados reais de pacientes são protegidos por sigilo médico, LGPD/HIPAA
-  e exigem aprovação de comitês de ética para uso, mesmo em pesquisa.
-- Para fins didáticos (curso de IA), a simulação permite treinar,
-  testar e demonstrar pipelines de ML sem risco de vazamento de dados
-  sensíveis reais — um exercício direto de Governança de Dados.
-
-Saída: data/numeric/dataset_pacientes_cardiacos.csv
+O script não utiliza informações de pacientes reais. Os valores foram criados
+com variáveis comuns em bases cardiológicas e não têm uso clínico.
 """
 
 import argparse
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
-N_PACIENTES_PADRAO = 300  # acima do mínimo de 100 exigido no enunciado
-CAMINHO_PADRAO = "../data/numeric/dataset_pacientes_cardiacos.csv"
+N_PACIENTES_PADRAO = 300
+RAIZ_PROJETO = Path(__file__).resolve().parents[1]
+CAMINHO_PADRAO = str(RAIZ_PROJETO / "data/numeric/dataset_pacientes_cardiacos.csv")
 
 
 def gerar_dataset(n: int, seed: int = 42, id_inicial: int = 1) -> pd.DataFrame:
-    RNG = np.random.default_rng(seed=seed)
-    idade = RNG.integers(29, 80, size=n)
+    rng = np.random.default_rng(seed=seed)
+    idade = rng.integers(29, 80, size=n)
 
     # Sexo: 0 = feminino, 1 = masculino (aprox. distribuição do dataset
     # clássico Heart Disease UCI, ~68% masculino)
-    sexo = RNG.choice([0, 1], size=n, p=[0.32, 0.68])
+    sexo = rng.choice([0, 1], size=n, p=[0.32, 0.68])
 
     # Tipo de dor no peito (chest pain type)
     # 0: assintomático | 1: angina típica | 2: angina atípica | 3: dor não anginosa
-    tipo_dor_peito = RNG.choice([0, 1, 2, 3], size=n, p=[0.47, 0.16, 0.17, 0.20])
+    tipo_dor_peito = rng.choice([0, 1, 2, 3], size=n, p=[0.47, 0.16, 0.17, 0.20])
 
     # Pressão arterial de repouso (mmHg) - correlacionada levemente com a idade
     pressao_arterial_repouso = np.clip(
-        RNG.normal(loc=120 + (idade - 50) * 0.5, scale=17), 90, 200
+        rng.normal(loc=120 + (idade - 50) * 0.5, scale=17), 90, 200
     ).round(0)
 
     # Colesterol total (mg/dL)
     colesterol = np.clip(
-        RNG.normal(loc=246 + (idade - 50) * 0.6, scale=51), 120, 570
+        rng.normal(loc=246 + (idade - 50) * 0.6, scale=51), 120, 570
     ).round(0)
 
     # Glicemia de jejum > 120 mg/dL (0 = não, 1 = sim)
-    glicemia_jejum_alta = RNG.choice([0, 1], size=n, p=[0.85, 0.15])
+    glicemia_jejum_alta = rng.choice([0, 1], size=n, p=[0.85, 0.15])
 
     # Resultado do eletrocardiograma de repouso
     # 0: normal | 1: anormalidade onda ST-T | 2: hipertrofia ventricular esquerda
-    ecg_repouso = RNG.choice([0, 1, 2], size=n, p=[0.50, 0.01, 0.49])
+    ecg_repouso = rng.choice([0, 1, 2], size=n, p=[0.50, 0.01, 0.49])
 
     # Frequência cardíaca máxima atingida em teste de esforço
     freq_cardiaca_maxima = np.clip(
-        RNG.normal(loc=220 - idade - RNG.normal(0, 8, size=n), scale=10), 70, 210
+        rng.normal(loc=220 - idade - rng.normal(0, 8, size=n), scale=10), 70, 210
     ).round(0)
 
     # Angina induzida por exercício (0 = não, 1 = sim)
-    angina_exercicio = RNG.choice([0, 1], size=n, p=[0.68, 0.32])
+    angina_exercicio = rng.choice([0, 1], size=n, p=[0.68, 0.32])
 
     # Depressão do segmento ST induzida pelo exercício em relação ao repouso
-    oldpeak = np.clip(RNG.exponential(scale=1.0, size=n), 0, 6.2).round(1)
+    oldpeak = np.clip(rng.exponential(scale=1.0, size=n), 0, 6.2).round(1)
 
     # Inclinação do segmento ST no pico do exercício
     # 0: descendente | 1: plana | 2: ascendente
-    inclinacao_st = RNG.choice([0, 1, 2], size=n, p=[0.14, 0.47, 0.39])
+    inclinacao_st = rng.choice([0, 1, 2], size=n, p=[0.14, 0.47, 0.39])
 
     # Número de vasos principais coloridos por fluoroscopia (0-3)
-    n_vasos_principais = RNG.choice([0, 1, 2, 3], size=n, p=[0.58, 0.22, 0.13, 0.07])
+    n_vasos_principais = rng.choice([0, 1, 2, 3], size=n, p=[0.58, 0.22, 0.13, 0.07])
 
     # IMC (kg/m2)
-    imc = np.clip(RNG.normal(loc=27, scale=4.5, size=n), 16, 45).round(1)
+    imc = np.clip(rng.normal(loc=27, scale=4.5, size=n), 16, 45).round(1)
 
     # Fumante (0 = não, 1 = sim)
-    fumante = RNG.choice([0, 1], size=n, p=[0.72, 0.28])
+    fumante = rng.choice([0, 1], size=n, p=[0.72, 0.28])
 
     # Diabetes (0 = não, 1 = sim)
-    diabetes = RNG.choice([0, 1], size=n, p=[0.83, 0.17])
+    diabetes = rng.choice([0, 1], size=n, p=[0.83, 0.17])
 
     # Histórico familiar de doença cardíaca (0 = não, 1 = sim)
-    historico_familiar = RNG.choice([0, 1], size=n, p=[0.65, 0.35])
+    historico_familiar = rng.choice([0, 1], size=n, p=[0.65, 0.35])
 
     # --- Variável-alvo: presença de doença cardíaca (0 = não, 1 = sim) ---
     # Construída a partir de um score de risco simplificado combinando
@@ -102,10 +92,10 @@ def gerar_dataset(n: int, seed: int = 42, id_inicial: int = 1) -> pd.DataFrame:
         + 0.4 * historico_familiar
         + 0.3 * fumante
         + 0.3 * diabetes
-        + RNG.normal(0, 1.3, size=n)
+        + rng.normal(0, 1.3, size=n)
     )
     prob_doenca = 1 / (1 + np.exp(-0.35 * (score_risco - 2)))
-    doenca_cardiaca = (RNG.random(n) < prob_doenca).astype(int)
+    doenca_cardiaca = (rng.random(n) < prob_doenca).astype(int)
 
     df = pd.DataFrame(
         {

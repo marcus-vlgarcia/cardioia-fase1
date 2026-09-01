@@ -1,38 +1,16 @@
 """
 CardioIA - Fase 1: Batimentos de Dados
-Gerador de imagens SIMULADAS de sinais de eletrocardiograma (ECG).
+Gerador de imagens sintéticas de ECG para estudo.
 
-STATUS NESTA ENTREGA: este script NÃO é a fonte principal de imagens do
-projeto. As imagens usadas em `assets/imagens/ecg_mitbih/` são REAIS,
-derivadas da MIT-BIH Arrhythmia Database (PhysioNet) — ver
-`assets/imagens/ecg_mitbih/README.md` e `manifesto_imagens.csv` para
-proveniência completa.
-
-Este gerador é mantido no repositório como alternativa/reserva, útil
-para criar dados de teste adicionais ou exemplos sintéticos balanceados
-por classe (normal, bradicardia, taquicardia, arritmia) sem depender de
-download externo.
-
-Uso básico (roda de dentro da pasta scripts/):
-
-    python3 gerar_imagens_ecg.py
-        -> gera 100 imagens em ../assets/imagens/ecg_sintetico/
-
-    python3 gerar_imagens_ecg.py -n 50
-        -> gera 50 imagens (substituindo a pasta padrão)
-
-    python3 gerar_imagens_ecg.py -n 30 -o ../assets/imagens/ecg_extra
-        -> gera 30 imagens em uma pasta nova, separada
-
-    python3 gerar_imagens_ecg.py -n 40 -m anexar
-        -> mantém as imagens já existentes na pasta e ACRESCENTA 40 novas,
-           continuando a numeração automaticamente (não sobrescreve nada)
+As imagens geradas aqui são complementares. O conjunto visual da entrega está
+em `assets/imagens/ecg_mitbih/` e foi obtido da MIT-BIH Arrhythmia Database.
 """
 
 import argparse
 import glob
 import os
 import re
+from pathlib import Path
 
 import numpy as np
 import matplotlib
@@ -40,7 +18,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 N_IMAGENS_PADRAO = 100
-OUT_DIR_PADRAO = "../assets/imagens/ecg_sintetico"
+RAIZ_PROJETO = Path(__file__).resolve().parents[1]
+OUT_DIR_PADRAO = str(RAIZ_PROJETO / "assets/imagens/ecg_sintetico")
 
 
 def batimento_pqrst(t, offset=0.0, amp_r=1.0):

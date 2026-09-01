@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+assets/imagens/ecg_sintetico/
+assets/imagens/exemplos_sinteticos/
+data/numeric/dataset_ampliado.csv
