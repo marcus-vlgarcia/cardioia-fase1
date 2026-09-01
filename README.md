@@ -1,281 +1,175 @@
 # CardioIA — Fase 1: Batimentos de Dados
 
-Projeto acadêmico do curso de Inteligência Artificial (FIAP), desenvolvido
-em formato PBL (Project Based Learning). O CardioIA é uma plataforma
-digital que simula um ecossistema de cardiologia inteligente, integrando
-dados clínicos, Machine Learning, Visão Computacional, IoT e agentes de IA
-ao longo de 7 fases.
+Este repositório reúne as bases preparadas para a primeira fase do projeto
+CardioIA, desenvolvido na disciplina de Inteligência Artificial da FIAP. A
+proposta é organizar dados que podem ser usados nas próximas etapas do projeto,
+envolvendo análise numérica, Processamento de Linguagem Natural (NLP) e Visão
+Computacional.
 
-Nesta primeira fase, o papel assumido é o de **cientista de dados
-hospitalar**: o objetivo é levantar, organizar e documentar os três tipos
-de dados que alimentarão os módulos inteligentes das próximas fases —
-dados numéricos, dados textuais e dados visuais — sempre com atenção à
-**Governança de Dados** e a possíveis **vieses** presentes nas bases.
+Nesta fase, o foco foi preparar os dados, registrar as fontes e discutir os
+limites do seu uso. Nenhum arquivo deste repositório deve ser usado para
+diagnóstico ou atendimento em saúde.
 
-## Objetivo do projeto
-
-- Construir uma base de dados de pacientes cardiológicos com informações
-  clinicamente relevantes.
-- Reunir textos que possam alimentar futuras análises de NLP sobre saúde
-  cardiovascular.
-- Reunir imagens que possam alimentar futuras análises de Visão
-  Computacional sobre exames cardiológicos.
-- Documentar claramente a origem, as limitações e o uso pretendido de
-  cada base, como exercício de Governança de Dados em IA.
-
-## Estrutura do repositório
+## Organização
 
 ```
 cardioia-fase1/
-├── README.md
-├── data/
-│   └── numeric/
-│       └── dataset_pacientes_cardiacos.csv
+├── data/numeric/
+│   └── dataset_pacientes_cardiacos.csv
 ├── assets/
 │   ├── textos/
-│   │   ├── doenca_arterial_coronariana.txt
-│   │   └── hipertensao_arterial_saude_publica.txt
-│   └── imagens/
-│       └── ecg_mitbih/
-│           ├── README.md              # documentação original da base (PhysioNet)
-│           ├── manifesto_imagens.csv  # proveniência, split, licença e hash SHA-256 de cada imagem
-│           ├── link_externo.txt       # link público de hospedagem (preencher)
-│           ├── train/                 # 70 imagens (registros 100–106)
-│           ├── validation/            # 20 imagens (registros 107–108)
-│           └── test/                  # 10 imagens (registro 109)
+│   │   ├── hipertensao_arterial_ministerio_saude.txt
+│   │   └── sindromes_coronarianas_ministerio_saude.txt
+│   └── imagens/ecg_mitbih/
+│       ├── train/                 # 70 imagens
+│       ├── validation/            # 20 imagens
+│       ├── test/                  # 10 imagens
+│       ├── manifesto_imagens.csv
+│       ├── README.md
+│       └── link_externo.txt
+├── docs/
+│   ├── dicionario_de_dados.md
+│   └── fontes.md
 ├── scripts/
 │   ├── gerar_dataset_numerico.py
 │   └── gerar_imagens_ecg.py
-└── notebooks/        # reservado para os notebooks das próximas fases (Colab/Jupyter)
+├── requirements.txt
+└── README.md
 ```
 
-## Parte 1 — Dados numéricos (IoT / clínicos)
+## Parte 1 — Dados numéricos
 
-**Arquivo:** `data/numeric/dataset_pacientes_cardiacos.csv` (300 linhas, acima do mínimo de 100 exigido)
+O arquivo `data/numeric/dataset_pacientes_cardiacos.csv` contém **300 registros
+simulados**. A quantidade está acima do mínimo de 100 linhas solicitado na
+atividade. Os dados não representam pacientes reais e foram gerados para fins
+acadêmicos.
 
-**Origem dos dados:** dados **simulados**, gerados via
-`scripts/gerar_dataset_numerico.py` com `numpy`/`pandas`. Não são dados de
-pacientes reais. As faixas de valores e as proporções entre variáveis
-foram construídas com base em padrões descritos na literatura médica geral
-sobre fatores de risco cardiovascular (ex.: relação entre idade, colesterol,
-pressão arterial e risco de doença cardíaca), e não em nenhuma base de
-dados protegida.
+As colunas incluem idade, sexo, pressão arterial em repouso, colesterol,
+glicemia, dados de ECG em repouso, frequência cardíaca máxima, angina por
+esforço, IMC, tabagismo, diabetes, histórico familiar e uma variável indicativa
+de doença cardíaca. As definições e codificações estão em
+[`docs/dicionario_de_dados.md`](docs/dicionario_de_dados.md).
 
-**Por que simulamos os dados:** dados reais de pacientes são protegidos
-por sigilo médico e por legislações como a LGPD, exigindo consentimento e
-aprovação ética para uso — mesmo em contexto acadêmico. A simulação
-permite treinar e testar pipelines de IA sem esse risco, sendo uma prática
-comum em ambientes de aprendizado.
+O conjunto é útil para exercícios de organização de dados, estatística e
+classificação supervisionada. Como os valores são simulados, resultados obtidos
+com ele não têm valor clínico e não podem ser generalizados para uma população
+real.
 
-**Variáveis mais relevantes do ponto de vista clínico:**
+## Parte 2 — Dados textuais
 
-| Variável | Por que é relevante |
-|---|---|
-| `idade`, `sexo` | Fatores de risco não modificáveis; a incidência de doença coronariana aumenta com a idade e varia entre sexos. |
-| `pressao_arterial_repouso` | Hipertensão é um dos principais fatores de risco cardiovascular. |
-| `colesterol` | Está diretamente relacionado à formação de placas de aterosclerose. |
-| `tipo_dor_peito`, `angina_exercicio` | Sintomas centrais para triagem de doença coronariana. |
-| `freq_cardiaca_maxima`, `oldpeak`, `inclinacao_st` | Indicadores obtidos em teste de esforço, usados clinicamente para estimar risco de isquemia. |
-| `n_vasos_principais` | Reflete diretamente o grau de obstrução coronariana. |
-| `fumante`, `diabetes`, `historico_familiar`, `imc` | Fatores de risco modificáveis (ou não) amplamente associados a eventos cardíacos. |
-| `doenca_cardiaca` | Variável-alvo (0/1), útil para treinar classificadores supervisionados na Fase 2. |
+Foram selecionados dois textos em português sobre saúde cardiovascular:
 
-**Nota sobre viés:** por ser sintética e gerada a partir de premissas
-simplificadas (ex.: maior prevalência no sexo masculino, reproduzindo
-padrões de datasets clássicos como o Heart Disease UCI), esta base carrega
-o mesmo tipo de viés de representatividade que bases reais desse domínio
-costumam ter. Isso é discutido de propósito aqui como gatilho para a
-reflexão sobre Governança de Dados: um modelo treinado nela pode
-sub-representar determinados grupos (ex.: mulheres, faixas etárias mais
-jovens) e deve ser reavaliado com dados reais e diversos antes de qualquer
-uso além do educacional.
+- `hipertensao_arterial_ministerio_saude.txt`, a partir de conteúdo público do
+  Ministério da Saúde sobre hipertensão;
+- `sindromes_coronarianas_ministerio_saude.txt`, a partir da Linha de Cuidado
+  do Infarto Agudo do Miocárdio e Síndromes Coronarianas Agudas.
 
-## Parte 2 — Dados textuais (NLP)
+Cada arquivo informa a fonte, a URL e a data de acesso. Eles podem ser usados
+em atividades introdutórias de NLP, como busca de termos relacionados a sintomas
+e fatores de risco, classificação por assunto e identificação de entidades de
+saúde. As fontes completas constam em [`docs/fontes.md`](docs/fontes.md).
 
-**Arquivos:** `assets/textos/doenca_arterial_coronariana.txt` e
-`assets/textos/hipertensao_arterial_saude_publica.txt`
+## Parte 3 — Dados visuais
 
-**Origem dos dados:** textos **originais**, escritos especificamente para
-este projeto com base em conhecimento médico geral e de domínio público
-sobre doença arterial coronariana e hipertensão arterial (não são cópias
-de nenhum artigo específico do SciELO, BVS, SUS ou de outra fonte —
-evitando, assim, qualquer questão de direitos autorais sobre o texto de
-terceiros).
+O conjunto visual principal contém **100 imagens PNG de ECG** derivadas da
+[MIT-BIH Arrhythmia Database](https://physionet.org/content/mitdb/1.0.0/), do
+PhysioNet. As imagens foram separadas por registro para evitar que segmentos de
+um mesmo registro apareçam em mais de um conjunto:
 
-**Como podem ser explorados por algoritmos de NLP:**
+| Conjunto | Registros | Imagens |
+| --- | --- | ---: |
+| Treino | 100 a 106 | 70 |
+| Validação | 107 e 108 | 20 |
+| Teste | 109 | 10 |
 
-- **Extração de sintomas e fatores de risco:** identificar termos como
-  "dor no peito", "colesterol elevado" ou "sedentarismo" via NER
-  (Named Entity Recognition) ou busca por palavras-chave.
-- **Classificação de tópicos:** treinar um classificador para diferenciar
-  textos sobre doença coronariana, hipertensão, diabetes etc., útil para
-  organizar automaticamente conteúdos educativos de um app de saúde.
-- **Análise de sentimento:** embora estes textos sejam neutros/informativos,
-  servem de baseline para comparar com textos de pacientes (ex.: relatos em
-  fóruns), medindo tom emocional associado a diferentes condições.
-- **Sumarização automática:** gerar resumos curtos que possam ser exibidos
-  em um chatbot de orientação ao paciente (Fase 5 do projeto).
+O arquivo `manifesto_imagens.csv` registra a origem, o intervalo de tempo, as
+derivações, o conjunto e o hash de cada imagem. Trata-se de material de estudo:
+as imagens não substituem exames, nem possuem rótulo clínico por segmento.
 
-**Relevância para IA em saúde:** compreender e estruturar automaticamente
-textos médicos é essencial para sistemas de triagem digital, chatbots de
-orientação e ferramentas de apoio à decisão clínica — todos objetivos
-citados no escopo do CardioIA.
+Elas podem apoiar exercícios de Visão Computacional, por exemplo na identificação
+de traçados, na extração de bordas e na análise de padrões. Uma etapa futura
+precisaria de rótulos apropriados e validação clínica para qualquer tarefa de
+classificação.
 
-## Parte 3 — Dados visuais (Visão Computacional)
+## Acesso aos dados
 
-**Arquivos:** `assets/imagens/ecg_mitbih/{train,validation,test}/*.png` (100 imagens)
+Além deste repositório, os arquivos da atividade estão disponíveis em pasta
+pública para consulta e correção:
 
-**Origem dos dados:** imagens **reais**, derivadas da **MIT-BIH Arrhythmia
-Database** (PhysioNet, versão 1.0.0, DOI
-[`10.13026/C2F305`](https://doi.org/10.13026/C2F305)), licenciada sob
-**Open Data Commons Attribution License v1.0**. Cada PNG representa um
-segmento de 10 segundos de ECG com dois canais (derivações **MLII** e
-**V5**), extraído de registros WFDB reais e renderizado com grade, sem
-alteração do sinal original.
+[Pasta pública do Google Drive](https://drive.google.com/drive/folders/18jSV0Aq45kVY0TAm7l7XCqzQAQevBpnI?usp=sharing)
 
-**Composição e organização (split por paciente/registro, evitando
-vazamento de dados entre conjuntos):**
+A pasta foi indicada para consulta dos arquivos completos. Ela deve permanecer
+com permissão de leitura para qualquer pessoa com o link até a correção da atividade.
 
-| Split | Registros (pacientes) | Nº de imagens |
-|---|---|---|
-| `train/` | 100–106 | 70 |
-| `validation/` | 107–108 | 20 |
-| `test/` | 109 | 10 |
+## Governança, privacidade e vieses
 
-**Proveniência e integridade:** o arquivo
-`assets/imagens/ecg_mitbih/manifesto_imagens.csv` traz, para cada imagem,
-o registro de origem, o intervalo de tempo do segmento, as derivações
-utilizadas, o split, a URL/DOI da fonte, a licença e o **hash SHA-256**
-do arquivo. Todas as 100 imagens foram conferidas contra o manifesto e
-100% dos hashes bateram, confirmando que os arquivos não foram
-corrompidos ou alterados após a geração.
+Os dados numéricos são sintéticos, o que evita o uso de informações pessoais e
+de prontuários. As imagens são dados públicos do PhysioNet e mantêm a atribuição
+à fonte. Ainda assim, as três bases têm limitações:
 
-> **Nota clínica importante:** conforme o `README.md` original da base
-> (preservado em `assets/imagens/ecg_mitbih/README.md`), estas são
-> **visualizações derivadas para uso acadêmico**, sem rótulo clínico por
-> segmento — ou seja, **não substituem exames diagnósticos** e não devem
-> ser usadas para qualquer finalidade clínica real.
+- o dataset numérico foi criado com distribuições simplificadas e pode reproduzir
+  vieses de idade e sexo presentes em bases clássicas;
+- os textos são informativos e não representam conversas ou prontuários de
+  pacientes;
+- a MIT-BIH é uma base histórica, com população e contexto de coleta próprios.
 
-**Como podem ser analisadas por algoritmos de Visão Computacional:**
+Por isso, qualquer modelo treinado com esses arquivos deve ser tratado como
+exercício acadêmico. Antes de uso real, seriam necessários dados representativos,
+validação, revisão ética e medidas de segurança compatíveis com a LGPD.
 
-- **Detecção de picos R:** localizar os picos de maior amplitude em cada
-  canal (MLII/V5) para estimar a frequência cardíaca automaticamente.
-- **Classificação de padrões/arritmias:** treinar uma CNN sobre os
-  segmentos de `train/`, validar em `validation/` e testar em `test/`
-  (split já separado por paciente, evitando vazamento de dados entre
-  conjuntos) para reconhecer morfologias associadas a diferentes tipos
-  de batimento.
-- **Comparação entre derivações:** usar os dois canais (MLII e V5) como
-  entradas complementares de um mesmo segmento, útil para modelos
-  multi-canal de Visão Computacional.
-- **Reconhecimento de bordas e formas:** isolar a curva do traçado da
-  grade de fundo, replicando o pré-processamento usado em sistemas reais
-  de digitalização de exames em papel.
+## Como executar os scripts
 
-**Relevância para IA em saúde:** a leitura automatizada de exames de
-imagem é um dos pilares de sistemas de diagnóstico assistido por IA,
-citado diretamente no escopo do CardioIA (Fase 4 — "Coração em Imagens").
-Por serem dados reais do PhysioNet (uma das fontes públicas mais usadas
-em pesquisa biomédica), essas imagens dão mais robustez ao projeto do que
-uma simulação, mantendo a devida atenção ao uso não-diagnóstico.
-
-**Alternativa sintética (mantida como referência):** o script
-`scripts/gerar_imagens_ecg.py` continua no repositório e permite gerar
-traçados de ECG sintéticos (ritmo normal, bradicardia, taquicardia e
-arritmia com extrassístole). Ele deixou de ser a fonte principal de
-imagens desta entrega, mas pode ser útil em fases futuras para criar
-dados de teste adicionais ou dados balanceados por classe.
-
-## Governança de Dados e vieses — reflexão do grupo
-
-- Os dados numéricos e os textos desta entrega são **simulados/originais**,
-  criados especificamente para fins didáticos, sem uso de dados reais de
-  pacientes ou de textos de terceiros, preservando privacidade e
-  conformidade com a LGPD. Já as imagens de ECG são **dados reais** do
-  PhysioNet — o projeto combina, portanto, dados sintéticos e reais, com
-  a origem de cada um claramente documentada nas seções acima.
-- A base numérica reproduz, de forma proposital, vieses de
-  representatividade comuns em datasets reais da área (ex.: maior
-  prevalência de casos no sexo masculino), o que deve ser levado em conta
-  ao interpretar qualquer resultado obtido a partir dela.
-- Sobre as imagens reais: a licença **Open Data Commons Attribution v1.0**
-  exige atribuição à fonte (já registrada no manifesto e neste README);
-  o split `train`/`validation`/`test` foi feito **por paciente**, evitando
-  vazamento de dados entre conjuntos; e a integridade das 100 imagens foi
-  conferida via hash SHA-256 contra o manifesto (100% de correspondência).
-
-## Links para os dados hospedados (preencher)
-
-> Os arquivos completos também estão disponíveis publicamente em:
-> - Dados numéricos: `[inserir link do Google Drive/OneDrive aqui]`
-> - Textos: `[inserir link do Google Drive/OneDrive aqui]`
-> - Imagens: `[inserir link do Google Drive/OneDrive aqui]` — também há um
->   placeholder pronto em `assets/imagens/ecg_mitbih/link_externo.txt`
-
-*(ver instruções de preenchimento na mensagem de entrega deste projeto)*
-
-## Como reproduzir os dados
+Os scripts não são necessários para abrir os dados entregues, mas foram mantidos
+para mostrar como a base simulada pode ser reproduzida ou ampliada.
 
 ```bash
-cd scripts
-python3 gerar_dataset_numerico.py   # gera data/numeric/dataset_pacientes_cardiacos.csv (300 linhas)
-python3 gerar_imagens_ecg.py        # gera imagens de ECG sintéticas alternativas (opcional)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-Dependências: `numpy`, `pandas`, `matplotlib`.
-
-**Gerando mais dados numéricos (opcional):** `gerar_dataset_numerico.py`
-aceita argumentos de linha de comando para controlar quantidade, arquivo
-de saída e se deve substituir ou anexar ao arquivo existente:
+### Gerar novamente o dataset numérico
 
 ```bash
-# Sobrescreve o arquivo padrão com um dataset novo de N linhas
-python3 gerar_dataset_numerico.py -n 500
-
-# Gera um CSV totalmente separado, sem tocar no dataset principal
-python3 gerar_dataset_numerico.py -n 150 -o ../data/numeric/dataset_extra.csv
-
-# Mantém as linhas já existentes e ACRESCENTA 300 linhas novas ao final
-# (paciente_id continua a numeração automaticamente, sem repetir IDs)
-python3 gerar_dataset_numerico.py -n 300 -m anexar
+python3 scripts/gerar_dataset_numerico.py
 ```
 
-No modo `anexar`, cada execução usa uma semente aleatória diferente por
-padrão (para não repetir os mesmos pacientes); no modo `substituir`
-(padrão), a semente é fixa (42), garantindo que rodar o script do zero
-sempre reproduza o mesmo dataset original de 300 linhas.
-
-**Gerando mais imagens sintéticas de ECG (opcional):** o script
-`gerar_imagens_ecg.py` funciona da mesma forma — quantidade, pasta de
-saída e modo substituir/anexar são todos configuráveis:
+O comando recria o arquivo principal com 300 registros e uma semente fixa. Para
+gerar uma base separada com mais registros:
 
 ```bash
-# Sobrescreve a pasta padrão com N imagens novas
-python3 gerar_imagens_ecg.py -n 50
-
-# Gera uma pasta totalmente nova, separada da principal
-python3 gerar_imagens_ecg.py -n 30 -o ../assets/imagens/ecg_extra
-
-# Mantém as imagens já existentes na pasta e ACRESCENTA 40 novas
-# (numeração continua automaticamente, ex.: ecg_0101.png, ecg_0102.png...)
-python3 gerar_imagens_ecg.py -n 40 -m anexar
+python3 scripts/gerar_dataset_numerico.py -n 500 -o data/numeric/dataset_ampliado.csv
 ```
 
-Assim como no script numérico, `substituir` usa semente fixa (7) por
-padrão, e `anexar` usa uma semente diferente a cada execução. As
-imagens geradas por este script vão para `assets/imagens/ecg_sintetico/`
-(ou a pasta indicada em `-o`), nunca em `assets/imagens/ecg_mitbih/`,
-que é reservada às imagens reais do PhysioNet.
+Também é possível acrescentar novos registros ao arquivo existente. Nesse modo,
+os identificadores continuam a numeração já presente no arquivo:
 
-As imagens reais de `assets/imagens/ecg_mitbih/` já estão prontas no
-repositório; sua proveniência pode ser reconferida a qualquer momento
-comparando o hash SHA-256 de cada arquivo com o valor correspondente em
-`manifesto_imagens.csv`.
+```bash
+python3 scripts/gerar_dataset_numerico.py -n 100 -m anexar
+```
 
----
+### Gerar imagens sintéticas de ECG
 
-Este material foi construído como base para as próximas fases do CardioIA
-(diagnóstico automatizado com IA, monitoramento contínuo com IoT, visão
-computacional, assistente virtual e previsão de crises), sempre com
-atenção à relevância clínica das informações e ao impacto real que
-soluções desse tipo podem ter na vida das pessoas.
+As imagens usadas na entrega são as 100 imagens reais do MIT-BIH. O script abaixo
+gera traçados sintéticos apenas como material complementar de estudo, sem alterar
+o conjunto real:
+
+```bash
+python3 scripts/gerar_imagens_ecg.py -n 100
+```
+
+Por padrão, os arquivos são criados em `assets/imagens/ecg_sintetico/`. Para
+usar outra pasta:
+
+```bash
+python3 scripts/gerar_imagens_ecg.py -n 30 -o assets/imagens/exemplos_sinteticos
+```
+
+As imagens sintéticas não devem ser apresentadas como exames reais e não fazem
+parte das 100 imagens usadas para cumprir o requisito da atividade.
+
+## Referências
+
+As referências completas estão em [`docs/fontes.md`](docs/fontes.md). As fontes
+incluem o Ministério da Saúde para os textos e o PhysioNet para as imagens de
+ECG.
