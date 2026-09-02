@@ -1,7 +1,6 @@
-<h1 align="center">
-  <a href="https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP" width="180"></a>
-  FIAP — Faculdade de Informática e Administração Paulista
-</h1>
+# FIAP - Faculdade de Informática e Administração Paulista
+
+<a href="https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width="40%" height="40%"></a>
 
 # CardioIA — Fase 1: Batimentos de Dados
 
