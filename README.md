@@ -40,20 +40,29 @@ cardioia-fase1/
 ## Parte 1 — Dados numéricos
 
 O arquivo `data/numeric/dataset_pacientes_cardiacos.csv` contém **300 registros
-simulados**. A quantidade está acima do mínimo de 100 linhas solicitado na
-atividade. Os dados não representam pacientes reais e foram gerados para fins
-acadêmicos.
+simulados**, acima do mínimo de 100 linhas solicitado na atividade. Os dados
+foram gerados por um script do próprio projeto, com valores plausíveis dentro de
+faixas usadas em exemplos de saúde cardiovascular. Portanto, não representam
+pacientes reais, não contêm dados pessoais e servem apenas para fins acadêmicos.
 
-As colunas incluem idade, sexo, pressão arterial em repouso, colesterol,
-glicemia, dados de ECG em repouso, frequência cardíaca máxima, angina por
-esforço, IMC, tabagismo, diabetes, histórico familiar e uma variável indicativa
-de doença cardíaca. As definições e codificações estão em
-[`docs/dicionario_de_dados.md`](docs/dicionario_de_dados.md).
+As definições, unidades e codificações de todas as colunas estão em
+[`docs/dicionario_de_dados.md`](docs/dicionario_de_dados.md). Para uma aplicação
+de IA voltada à saúde, as variáveis abaixo seriam as mais relevantes neste
+conjunto:
 
-O conjunto é útil para exercícios de organização de dados, estatística e
-classificação supervisionada. Como os valores são simulados, resultados obtidos
-com ele não têm valor clínico e não podem ser generalizados para uma população
-real.
+| Grupo de variáveis | Por que é relevante para a análise |
+| --- | --- |
+| Idade e sexo | Ajudam a caracterizar o perfil da população e estão associados a diferentes padrões de risco cardiovascular. |
+| Pressão arterial em repouso e colesterol | São medidas frequentemente acompanhadas na prevenção de hipertensão e aterosclerose. |
+| Tipo de dor no peito e angina por esforço | Registram sinais relatados pelo paciente que podem apoiar a identificação de padrões de sintomas. |
+| Frequência cardíaca máxima, ECG em repouso, `oldpeak` e inclinação do segmento ST | Representam informações relacionadas ao esforço e ao traçado cardíaco, úteis para comparar perfis no conjunto. |
+| Diabetes, tabagismo, IMC e histórico familiar | Reúnem fatores de risco que podem ser combinados em análises de associação e classificação. |
+| `doenca_cardiaca` | É a variável-alvo didática, isto é, a coluna que um exercício de classificação supervisionada tentaria estimar. |
+
+O conjunto permite praticar organização de dados, estatística descritiva e
+classificação supervisionada. Como os valores são simulados e as relações entre
+as colunas foram simplificadas, qualquer resultado obtido nele não tem valor
+clínico nem pode ser generalizado para uma população real.
 
 ## Parte 2 — Dados textuais
 
@@ -64,10 +73,21 @@ Foram selecionados dois textos em português sobre saúde cardiovascular:
 - `infarto_agudo_miocardio_ministerio_saude.txt`, a partir de conteúdo público
   do Ministério da Saúde sobre infarto agudo do miocárdio.
 
-Cada arquivo informa a fonte, a URL e a data de acesso. Eles podem ser usados
-em atividades introdutórias de NLP, como busca de termos relacionados a sintomas
-e fatores de risco, classificação por assunto e identificação de entidades de
-saúde. As fontes completas constam em [`docs/fontes.md`](docs/fontes.md).
+Cada arquivo informa a fonte, a URL e a data de acesso. Os textos permitem
+transformar conteúdo de saúde em exemplos de análise de linguagem natural, como
+mostra a tabela a seguir:
+
+| Possível análise de NLP | Aplicação nos textos | Relevância para o projeto |
+| --- | --- | --- |
+| Extração de entidades e palavras-chave | Localizar termos como sintomas, fatores de risco, exames e tratamentos. | Facilita a organização de informações importantes em um conteúdo extenso. |
+| Classificação de tópicos | Diferenciar trechos sobre hipertensão, infarto, prevenção ou atendimento de urgência. | Pode apoiar a separação automática de conteúdos por assunto. |
+| Busca semântica | Encontrar passagens relacionadas a uma dúvida, mesmo quando a pergunta usa palavras diferentes do texto. | É útil para recuperar informações em materiais educativos de saúde. |
+| Análise de sentimentos | Avaliar a presença de linguagem de alerta, prevenção ou orientação. | Ajuda a discutir limites da técnica: estes textos são informativos, então não substituem relatos reais de pacientes. |
+
+Essas análises são relevantes porque podem apoiar a consulta e a organização de
+materiais de educação em saúde. Em um projeto real, seria necessário validar as
+respostas com profissionais da área e deixar claro que o sistema não realiza
+diagnóstico. As fontes completas constam em [`docs/fontes.md`](docs/fontes.md).
 
 ## Parte 3 — Dados visuais
 
