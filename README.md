@@ -110,16 +110,18 @@ clínico nem pode ser generalizado para uma população real.
 
 ## Parte 2 — Dados textuais
 
-Foram selecionados dois textos em português sobre saúde cardiovascular:
+Foram extraídos dois textos em português sobre saúde cardiovascular:
 
-- `hipertensao_arterial_ministerio_saude.txt`, a partir de conteúdo público do
+- `hipertensao_arterial_ministerio_saude.txt`, com excerto literal da página do
   Ministério da Saúde sobre hipertensão;
-- `infarto_agudo_miocardio_ministerio_saude.txt`, a partir de conteúdo público
-  do Ministério da Saúde sobre infarto agudo do miocárdio.
+- `infarto_agudo_miocardio_ministerio_saude.txt`, com excerto literal da página
+  do Ministério da Saúde sobre infarto.
 
-Cada arquivo informa a fonte, a URL e a data de acesso. Os textos permitem
-transformar conteúdo de saúde em exemplos de análise de linguagem natural, como
-mostra a tabela a seguir:
+Os conteúdos principais das páginas foram convertidos para `.txt`, sem menus ou
+elementos de navegação. Cada arquivo informa a fonte, a URL, a data de acesso e
+a licença, deixando claro que o texto não é um resumo produzido pelo grupo. Os
+textos permitem exemplos de análise de linguagem natural, como mostra a tabela a
+seguir:
 
 | Possível análise de NLP | Aplicação nos textos | Relevância para o projeto |
 | --- | --- | --- |

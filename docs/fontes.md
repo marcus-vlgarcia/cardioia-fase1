@@ -4,13 +4,13 @@
 
 1. **Ministério da Saúde. Hipertensão (pressão alta).**
    Disponível em: <https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hipertensao>.
-   Acesso em: 2 set. 2026. O conteúdo público foi selecionado e organizado em
-   texto simples, com a referência identificada no arquivo correspondente.
+   Acesso em: 2 set. 2026. O arquivo correspondente contém um excerto literal
+   do texto principal, convertido para `.txt`, com a referência identificada.
 
 2. **Ministério da Saúde. Infarto.**
    Disponível em: <https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infarto>.
-   Acesso em: 2 set. 2026. O conteúdo público foi selecionado e organizado em
-   texto simples para a atividade de NLP, com a fonte preservada no arquivo.
+   Acesso em: 2 set. 2026. O arquivo correspondente contém um excerto literal
+   do texto principal, convertido para `.txt`, com a referência identificada.
 
 ## Imagens de ECG
 

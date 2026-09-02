@@ -1,57 +1,40 @@
-INFARTO AGUDO DO MIOCÁRDIO
+INFARTO
+
+EXCERTO LITERAL DE FONTE PÚBLICA
 
 Fonte: Ministério da Saúde do Brasil
 Página de origem: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infarto
 Data de acesso e conversão para .txt: 2 set. 2026
 Licença informada no portal: Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada.
 
-Este arquivo reúne uma seleção textual organizada a partir do conteúdo público
-da fonte indicada. A referência foi mantida para permitir a conferência do
-material original.
+O conteúdo abaixo é um excerto literal do texto principal da página indicada,
+convertido para formato .txt. Menus e elementos de navegação do site não foram
+incluídos.
 
-1. O QUE É O INFARTO
+O Infarto Agudo do Miocárdio é a maior causa de mortes no país. Estima-se que, no
+Brasil, ocorram de 300 mil a 400 mil casos anuais de infarto e que a cada 5 a 7
+casos, ocorra um óbito. Para diminuir o risco de morte, o atendimento de urgência
+e emergência, nos primeiros minutos, é fundamental para salvar uma vida.
 
-O infarto agudo do miocárdio, também chamado de ataque cardíaco, ocorre quando
-células do músculo cardíaco sofrem lesão por interrupção súbita e intensa do
-fluxo sanguíneo. Essa interrupção pode acontecer pela formação de coágulos em
-artérias coronárias. Em alguns casos menos frequentes, pode estar relacionada à
-contração da artéria ou ao deslocamento de um coágulo formado em outra região do
-coração.
+INFORMAÇÕES IMPORTANTES
 
-O infarto é uma emergência. O atendimento rápido nos primeiros minutos pode
-reduzir complicações e salvar vidas. A organização da rede de urgência inclui o
-acionamento do SAMU, o atendimento inicial e a comunicação com o serviço
-hospitalar de referência.
+Infarto agudo do miocárdio ou ataque cardíaco é a morte de células do músculo do
+coração devido a formação de coágulos que interrompem o fluxo sanguíneo de forma
+súbita e intensa.
 
-2. SINAIS E SINTOMAS
+SINTOMAS
 
-Um sinal comum é a dor ou o desconforto no peito, que pode irradiar para costas,
-rosto ou braço esquerdo e, em alguns casos, para o braço direito. A sensação pode
-ser descrita como pressão, peso ou aperto no tórax. Também podem ocorrer suor
-frio, palidez, falta de ar e sensação de desmaio.
+Dor ou desconforto na região peitoral, podendo irradiar para as costas, rosto,
+braço esquerdo e, raramente, braço direito. Essa dor costuma ser intensa e
+prolongada, acompanhada de sensação de peso ou aperto sobre o tórax, provocando
+suor frio, palidez, falta de ar e sensação de desmaio.
 
-Em idosos e pessoas com diabetes, os sinais podem ser menos específicos. A falta
-de ar, o mal-estar súbito ou uma dor abdominal pouco comum também merecem atenção
-quando surgem de forma inesperada. Em situações de suspeita, é importante buscar
-atendimento de emergência imediatamente.
+Em idosos, o principal sintoma do infarto agudo do miocárdio pode ser a falta de
+ar. A dor também pode ser no abdome, semelhante a dor de uma gastrite ou
+esofagite de refluxo, mas é pouco frequente.
 
-3. FATORES DE RISCO
+FATORES DE RISCO
 
-Tabagismo, sedentarismo, alimentação inadequada, colesterol alto e estresse em
-excesso são fatores associados ao risco de infarto. Hipertensão e diabetes também
-exigem cuidado, pois podem aumentar a probabilidade de eventos cardiovasculares.
-A presença desses fatores não confirma que uma pessoa terá infarto, mas reforça
-a importância da prevenção e do acompanhamento de saúde.
-
-4. PREVENÇÃO E CUIDADO
-
-Praticar atividade física, manter alimentação equilibrada, não fumar e moderar
-o consumo de álcool são medidas preventivas destacadas em materiais de saúde
-pública. O controle da pressão arterial, da glicemia e do colesterol também faz
-parte do cuidado cardiovascular. Quando surgem sintomas compatíveis com infarto,
-a recomendação é ligar para o SAMU pelo número 192 ou procurar uma emergência
-cardiológica.
-
-Este texto pode ser usado em atividades de NLP para localizar menções a sintomas,
-fatores de risco, prevenção e atendimento de urgência. O material tem caráter
-educativo e não deve ser usado como instrumento de diagnóstico ou decisão clínica.
+Os principais fatores de risco são tabagismo, sedentarismo, alimentação ruim,
+colesterol alto e estresse em excesso. Além do infarto, essas condutas podem
+provocar hipertensão, AVC, obesidade, depressão e diabetes.
