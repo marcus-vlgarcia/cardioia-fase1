@@ -45,6 +45,17 @@ foram gerados por um script do próprio projeto, com valores plausíveis dentro 
 faixas usadas em exemplos de saúde cardiovascular. Portanto, não representam
 pacientes reais, não contêm dados pessoais e servem apenas para fins acadêmicos.
 
+Optou-se pela simulação mesmo existindo bases públicas, como a
+[Heart Disease, da UCI](https://uci-ics-mlr-prod.aws.uci.edu/dataset/45/heart%2Bdisease),
+que reúne 303 registros anonimizados com variáveis cardiovasculares. Para esta
+etapa, a base simulada permite apresentar claramente como os dados foram gerados,
+reproduzir o arquivo e evitar o tratamento de informações de saúde de pessoas
+reais. Além disso, uma base pública pode ter coleta antiga, poucas observações ou
+codificações próprias; já bases clínicas mais detalhadas normalmente exigem
+credenciamento, termo de uso e cuidados adicionais de privacidade. A escolha não
+torna os dados simulados mais adequados para uso médico: ela apenas é mais
+apropriada e transparente para o objetivo didático desta fase.
+
 As definições, unidades e codificações de todas as colunas estão em
 [`docs/dicionario_de_dados.md`](docs/dicionario_de_dados.md). Para uma aplicação
 de IA voltada à saúde, as variáveis abaixo seriam as mais relevantes neste
@@ -93,8 +104,15 @@ diagnóstico. As fontes completas constam em [`docs/fontes.md`](docs/fontes.md).
 
 O conjunto visual principal contém **100 imagens PNG de ECG** derivadas da
 [MIT-BIH Arrhythmia Database](https://physionet.org/content/mitdb/1.0.0/), do
-PhysioNet. As imagens foram separadas por registro para evitar que segmentos de
-um mesmo registro apareçam em mais de um conjunto:
+PhysioNet. Os sinais públicos da base foram convertidos em imagens de traçados
+eletrocardiográficos para permitir exercícios com arquivos visuais. São imagens
+reais de exames da fonte indicada, e não imagens sintéticas. Elas estão no
+repositório e também na pasta pública do Google Drive informada na seção
+[Acesso aos dados](#acesso-aos-dados).
+
+As imagens foram separadas por registro para evitar que segmentos de um mesmo
+registro apareçam em mais de um conjunto. Essa organização reduz o risco de um
+modelo avaliar, no teste, um traçado muito parecido com outro já visto no treino:
 
 | Conjunto | Registros | Imagens |
 | --- | --- | ---: |
@@ -106,10 +124,20 @@ O arquivo `manifesto_imagens.csv` registra a origem, o intervalo de tempo, as
 derivações, o conjunto e o hash de cada imagem. Trata-se de material de estudo:
 as imagens não substituem exames, nem possuem rótulo clínico por segmento.
 
-Elas podem apoiar exercícios de Visão Computacional, por exemplo na identificação
-de traçados, na extração de bordas e na análise de padrões. Uma etapa futura
-precisaria de rótulos apropriados e validação clínica para qualquer tarefa de
-classificação.
+As possibilidades de análise por Visão Computacional incluem:
+
+| Possível análise de VC | Aplicação nas imagens de ECG | Importância para IA em saúde |
+| --- | --- | --- |
+| Pré-processamento e identificação de traçado | Recortar a região útil do exame, reduzir ruídos visuais e localizar a linha do sinal. | Padroniza a entrada antes de uma análise automática. |
+| Detecção de padrões e bordas | Identificar o desenho do traçado, picos e mudanças de inclinação ao longo do ECG. | Mostra como características visuais podem ser transformadas em dados para comparação. |
+| Reconhecimento de anomalias | Procurar traçados que se diferenciem do padrão predominante. | Pode ser a base de sistemas de apoio à revisão de grandes volumes de exames. |
+| Classificação de imagens | Em uma etapa futura, associar padrões a classes clínicas previamente rotuladas. | Ilustra o potencial de modelos que auxiliem profissionais na priorização de exames. |
+
+Essas aplicações podem agilizar a organização e a revisão de exames, mas não
+substituem a interpretação de profissionais de saúde. Como este conjunto não
+traz rótulos clínicos por imagem, ele é adequado para exploração visual e
+preparo de dados; uma classificação médica exigiria rótulos confiáveis,
+validação clínica e avaliação de vieses antes de qualquer uso real.
 
 ## Acesso aos dados
 
