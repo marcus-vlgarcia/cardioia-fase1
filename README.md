@@ -44,6 +44,8 @@ simulados**, acima do mínimo de 100 linhas solicitado na atividade. Os dados
 foram gerados por um script do próprio projeto, com valores plausíveis dentro de
 faixas usadas em exemplos de saúde cardiovascular. Portanto, não representam
 pacientes reais, não contêm dados pessoais e servem apenas para fins acadêmicos.
+O arquivo também pode ser acessado diretamente na
+[pasta de dados numéricos do Google Drive](https://drive.google.com/drive/u/0/folders/1w0OrNUyqomzj2sH7Ti0DWEU0AYtmiaph).
 
 Optou-se pela simulação mesmo existindo bases públicas, como a
 [Heart Disease, da UCI](https://uci-ics-mlr-prod.aws.uci.edu/dataset/45/heart%2Bdisease),
@@ -107,8 +109,8 @@ O conjunto visual principal contém **100 imagens PNG de ECG** derivadas da
 PhysioNet. Os sinais públicos da base foram convertidos em imagens de traçados
 eletrocardiográficos para permitir exercícios com arquivos visuais. São imagens
 reais de exames da fonte indicada, e não imagens sintéticas. Elas estão no
-repositório e também na pasta pública do Google Drive informada na seção
-[Acesso aos dados](#acesso-aos-dados).
+repositório e também na
+[pasta de imagens de ECG do Google Drive](https://drive.google.com/drive/u/0/folders/1B6aVJphAdL24uQbI_EgVwcXJlrEOKW9g).
 
 As imagens foram separadas por registro para evitar que segmentos de um mesmo
 registro apareçam em mais de um conjunto. Essa organização reduz o risco de um
