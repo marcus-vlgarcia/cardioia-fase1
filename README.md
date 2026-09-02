@@ -19,7 +19,7 @@ cardioia-fase1/
 ├── assets/
 │   ├── textos/
 │   │   ├── hipertensao_arterial_ministerio_saude.txt
-│   │   └── sindromes_coronarianas_ministerio_saude.txt
+│   │   └── infarto_agudo_miocardio_ministerio_saude.txt
 │   └── imagens/ecg_mitbih/
 │       ├── train/                 # 70 imagens
 │       ├── validation/            # 20 imagens
@@ -61,8 +61,8 @@ Foram selecionados dois textos em português sobre saúde cardiovascular:
 
 - `hipertensao_arterial_ministerio_saude.txt`, a partir de conteúdo público do
   Ministério da Saúde sobre hipertensão;
-- `sindromes_coronarianas_ministerio_saude.txt`, a partir da Linha de Cuidado
-  do Infarto Agudo do Miocárdio e Síndromes Coronarianas Agudas.
+- `infarto_agudo_miocardio_ministerio_saude.txt`, a partir de conteúdo público
+  do Ministério da Saúde sobre infarto agudo do miocárdio.
 
 Cada arquivo informa a fonte, a URL e a data de acesso. Eles podem ser usados
 em atividades introdutórias de NLP, como busca de termos relacionados a sintomas
