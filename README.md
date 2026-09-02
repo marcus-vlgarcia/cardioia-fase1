@@ -1,7 +1,7 @@
 # CardioIA — Fase 1: Batimentos de Dados
 
 Este repositório reúne as bases preparadas para a primeira fase do projeto
-CardioIA, desenvolvido na disciplina de Inteligência Artificial da FIAP. A
+CardioIA, desenvolvido no curso de Inteligência Artificial da FIAP. A
 proposta é organizar dados que podem ser usados nas próximas etapas do projeto,
 envolvendo análise numérica, Processamento de Linguagem Natural (NLP) e Visão
 Computacional.
