@@ -1,14 +1,11 @@
-# FIAP — Faculdade de Informática e Administração Paulista
-
-<a href="https://www.fiap.com.br/">
-  <img src="assets/logo-fiap.png" alt="FIAP — Faculdade de Informática e Administração Paulista" width="40%">
-</a>
+<h1 align="center">
+  <a href="https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP" width="180"></a>
+  FIAP — Faculdade de Informática e Administração Paulista
+</h1>
 
 # CardioIA — Fase 1: Batimentos de Dados
 
-## Nome do grupo
-
-PulseIA
+## Grupo - PulseIA
 
 ## 👨‍🎓 Integrantes
 
@@ -264,8 +261,8 @@ ECG.
 
 ## 📋 Licença
 
-Este README foi estruturado a partir do
-[Modelo Git FIAP](https://github.com/agodoi/template), licenciado sob
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). As fontes e as
-condições de uso dos dados utilizados no projeto estão registradas em
-[`docs/fontes.md`](docs/fontes.md).
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="Creative Commons"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="Attribution">
+
+[MODELO GIT FIAP](https://github.com/agodoi/template) por [Fiap](https://fiap.com.br/) está licenciado sobre [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1).
+
+As fontes e as condições de uso dos dados utilizados no projeto estão registradas em [`docs/fontes.md`](https://github.com/marcus-vlgarcia/cardioia-fase1/blob/cardioia-fase1-ajustes/docs/fontes.md).
