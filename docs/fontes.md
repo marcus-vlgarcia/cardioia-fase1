@@ -4,14 +4,13 @@
 
 1. **Ministério da Saúde. Hipertensão (pressão alta).**
    Disponível em: <https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hipertensao>.
-   Acesso em: 1 set. 2026. O conteúdo público foi convertido para texto simples
-   e identificado no arquivo correspondente.
+   Acesso em: 2 set. 2026. O conteúdo público foi selecionado e organizado em
+   texto simples, com a referência identificada no arquivo correspondente.
 
-2. **Ministério da Saúde. Linha de Cuidado do Infarto Agudo do Miocárdio e
-   Protocolo de Síndromes Coronarianas Agudas.**
-   Disponível em: <https://www.gov.br/saude/pt-br/assuntos/pcdt/l/linha-de-cuidado-do-infarto-agudo-do-miocardio-e-o-protocolo-de-sindromes-coronarianas-agudas.pdf/view>.
-   Acesso em: 1 set. 2026. O material foi convertido para texto simples para a
-   atividade de NLP, com a fonte preservada no arquivo.
+2. **Ministério da Saúde. Infarto.**
+   Disponível em: <https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infarto>.
+   Acesso em: 2 set. 2026. O conteúdo público foi selecionado e organizado em
+   texto simples para a atividade de NLP, com a fonte preservada no arquivo.
 
 ## Imagens de ECG
 

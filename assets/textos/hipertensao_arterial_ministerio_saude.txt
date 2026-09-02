@@ -1,26 +1,62 @@
-HIPERTENSÃO (PRESSÃO ALTA)
+HIPERTENSÃO ARTERIAL (PRESSÃO ALTA)
 
 Fonte: Ministério da Saúde do Brasil
 Página de origem: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hipertensao
-Data de acesso e conversão para .txt: 1 set. 2026
+Data de acesso e conversão para .txt: 2 set. 2026
 Licença informada no portal: Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada.
 
-TEXTO SELECIONADO
+Este arquivo reúne uma seleção textual organizada a partir do conteúdo público
+da fonte indicada. A referência foi mantida para permitir a conferência do
+material original.
 
-A hipertensão arterial, também chamada de pressão alta, é uma doença crônica
-caracterizada por níveis elevados de pressão nas artérias. A elevação da pressão
-faz com que o coração trabalhe mais para distribuir o sangue pelo corpo e está
-associada a maior risco de acidente vascular cerebral, infarto, aneurisma e
-insuficiência renal e cardíaca.
+1. CONCEITO
 
-Entre os fatores relacionados à hipertensão estão tabagismo, consumo de bebidas
-alcoólicas, obesidade, estresse, consumo elevado de sal, colesterol alto e falta
-de atividade física. A doença pode não apresentar sintomas no início; por isso,
-aferir a pressão regularmente é importante para o diagnóstico.
+A hipertensão arterial, conhecida como pressão alta, é uma doença crônica em
+que a pressão do sangue nas artérias permanece elevada. Como consequência, o
+coração precisa fazer mais esforço para que o sangue circule pelo organismo. A
+hipertensão está relacionada a maior risco de acidente vascular cerebral, infarto,
+aneurisma arterial e insuficiência renal e cardíaca.
 
-O controle envolve acompanhamento profissional e hábitos de vida saudáveis, como
-reduzir o sal, praticar atividade física, manter peso adequado, evitar o fumo e
-moderar o consumo de álcool.
+Valores de pressão iguais ou superiores a 140/90 mmHg devem ser investigados por
+profissionais de saúde. A aferição correta e periódica da pressão é importante
+porque muitas pessoas não apresentam sinais evidentes nas fases iniciais da
+doença.
 
-Observação: o conteúdo foi mantido como texto informativo para exercícios de
-NLP. Ele não substitui orientação ou atendimento de saúde.
+2. FATORES ASSOCIADOS
+
+A pressão alta pode ter relação com histórico familiar, idade e diferentes
+hábitos de vida. Entre os fatores que merecem atenção estão tabagismo, consumo
+de bebidas alcoólicas, excesso de peso, estresse, ingestão elevada de sal,
+colesterol alto e falta de atividade física. Diabetes e outras doenças crônicas
+também precisam ser considerados na avaliação do risco cardiovascular.
+
+Os fatores de risco não atuam de forma isolada. Uma pessoa com sedentarismo,
+alimentação inadequada e excesso de peso, por exemplo, pode ter maior chance de
+apresentar alterações de pressão e outros problemas cardiovasculares. Por isso,
+a prevenção envolve ações contínuas, e não apenas uma medida pontual.
+
+3. SINTOMAS E DIAGNÓSTICO
+
+Quando a pressão se eleva muito, algumas pessoas podem sentir dor de cabeça,
+tontura, fraqueza, zumbido no ouvido, visão embaçada, sangramento nasal ou dor
+no peito. Esses sinais não aparecem em todos os casos e não substituem a medição
+da pressão arterial. O diagnóstico depende de avaliação clínica e de medições
+realizadas de forma adequada.
+
+Acompanhamento regular é especialmente importante para pessoas com familiares
+hipertensos, diabetes, obesidade ou outras condições associadas ao risco
+cardiovascular. Em caso de sintomas intensos ou súbitos, a orientação é procurar
+atendimento de saúde.
+
+4. PREVENÇÃO E CONTROLE
+
+O controle da hipertensão envolve acompanhamento profissional e hábitos de vida
+mais saudáveis. Entre as medidas recomendadas estão manter peso adequado, reduzir
+o consumo de sal, praticar atividade física regularmente, evitar o tabagismo,
+moderar o consumo de álcool e acompanhar o diabetes quando presente. Quando há
+indicação médica, o tratamento também pode incluir medicamentos.
+
+Este texto pode apoiar exercícios de Processamento de Linguagem Natural, como a
+identificação de sintomas, fatores de risco, medidas de prevenção e termos
+relacionados ao acompanhamento de doenças crônicas. O conteúdo é informativo e
+não substitui consulta, diagnóstico ou orientação profissional.
