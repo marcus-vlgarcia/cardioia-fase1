@@ -1,4 +1,28 @@
+# FIAP — Faculdade de Informática e Administração Paulista
+
 # CardioIA — Fase 1: Batimentos de Dados
+
+## Nome do grupo
+
+PulseIA
+
+## 👨‍🎓 Integrantes
+
+- Erik Criscuolo
+- [Marcus Vinícius Loureiro Garcia](https://www.linkedin.com/in/marcusvlgarcia/)
+- [Sidney William de Paula Dias](https://www.linkedin.com/in/sidneywilliamdepaula/)
+
+## 👩‍🏫 Professores
+
+### Tutor
+
+- [Leonardo Ruiz Orabona](https://www.linkedin.com/in/leonardoorabona/)
+
+### Coordenador
+
+- [André Godoi Chiovato](https://www.linkedin.com/in/andregodoichiovato/)
+
+## 📜 Descrição
 
 Este repositório reúne as bases preparadas para a primeira fase do projeto
 CardioIA, desenvolvido na disciplina de Inteligência Artificial da FIAP. A
@@ -10,7 +34,12 @@ Nesta fase, o foco foi preparar os dados, registrar as fontes e discutir os
 limites do seu uso. Nenhum arquivo deste repositório deve ser usado para
 diagnóstico ou atendimento em saúde.
 
-## Organização
+## 📁 Estrutura de pastas
+
+As pastas abaixo foram organizadas de acordo com o tipo de dado e sua função no
+projeto: `data` contém o dataset numérico, `assets` reúne os textos e imagens,
+`docs` registra o dicionário de dados e as fontes, e `scripts` guarda os códigos
+de reprodução e geração dos materiais.
 
 ```
 cardioia-fase1/
@@ -167,7 +196,7 @@ Por isso, qualquer modelo treinado com esses arquivos deve ser tratado como
 exercício acadêmico. Antes de uso real, seriam necessários dados representativos,
 validação, revisão ética e medidas de segurança compatíveis com a LGPD.
 
-## Como executar os scripts
+## 🔧 Como executar o código
 
 Os scripts não são necessários para abrir os dados entregues, mas foram mantidos
 para mostrar como a base simulada pode ser reproduzida ou ampliada.
@@ -223,3 +252,16 @@ parte das 100 imagens usadas para cumprir o requisito da atividade.
 As referências completas estão em [`docs/fontes.md`](docs/fontes.md). As fontes
 incluem o Ministério da Saúde para os textos e o PhysioNet para as imagens de
 ECG.
+
+## 🗃 Histórico de lançamentos
+
+- `0.1.0` — 02/09/2026: organização e entrega das bases numérica, textual e
+  visual da Fase 1.
+
+## 📋 Licença
+
+Este README foi estruturado a partir do
+[Modelo Git FIAP](https://github.com/agodoi/template), licenciado sob
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). As fontes e as
+condições de uso dos dados utilizados no projeto estão registradas em
+[`docs/fontes.md`](docs/fontes.md).
