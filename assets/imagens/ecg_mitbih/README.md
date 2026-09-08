@@ -15,3 +15,10 @@ o intervalo de tempo e o hash de cada imagem.
 
 As imagens são visualizações derivadas para uso acadêmico. Elas não são exames
 independentes e não possuem rótulo clínico por segmento.
+
+Apesar de haver 100 arquivos, o conjunto representa 10 registros de origem, com
+10 segmentos de cada registro. Portanto, não equivale a 100 pacientes ou 100
+exames independentes. A separação por registro reduz o risco de vazamento entre
+treino, validação e teste, mas não resolve a limitação de diversidade clínica.
+Qualquer estudo de classificação ou identificação de anomalias clínicas exigirá
+mais registros e rótulos confiáveis por segmento.
