@@ -63,7 +63,7 @@ def main():
     resultados = [analisar(frase, mapa) for frase in frases]
     args.saida.parent.mkdir(parents=True, exist_ok=True)
     with args.saida.open("w", encoding="utf-8", newline="") as arquivo:
-        writer = csv.DictWriter(arquivo, fieldnames=resultados[0].keys())
+        writer = csv.DictWriter(arquivo, fieldnames=resultados[0].keys(), lineterminator="\n")
         writer.writeheader()
         writer.writerows(resultados)
     for i, resultado in enumerate(resultados, 1):
