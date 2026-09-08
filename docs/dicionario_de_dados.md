@@ -26,4 +26,14 @@ como referência clínica.
 | `doenca_cardiaca` | Variável indicativa usada no exercício | 0 = ausência; 1 = presença |
 
 `doenca_cardiaca` foi calculada a partir de uma regra probabilística simples.
-Ela não é um diagnóstico, nem representa a decisão de um profissional de saúde.
+Ela combina idade, sexo, colesterol, pressão arterial, angina por exercício,
+`oldpeak`, tipo de dor no peito, número de vasos, histórico familiar,
+tabagismo e diabetes. Ela não é um diagnóstico, nem representa a decisão de um
+profissional de saúde.
+
+Como essas mesmas variáveis estão disponíveis no arquivo, um algoritmo pode
+aprender a reproduzir a regra usada pelo gerador. Assim, uma métrica alta nessa
+coluna demonstraria apenas o funcionamento de um exercício de classificação;
+não validaria a capacidade de prever doença cardíaca em pessoas reais. A
+distribuição observada e as limitações da base estão em
+[`auditoria_dados_fase1.md`](auditoria_dados_fase1.md).

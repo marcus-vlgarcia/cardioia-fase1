@@ -36,6 +36,29 @@ Nesta fase, o foco foi preparar os dados, registrar as fontes e discutir os
 limites do seu uso. Nenhum arquivo deste repositório deve ser usado para
 diagnóstico ou atendimento em saúde.
 
+## Evolução após a avaliação da Fase 1
+
+Após a avaliação da Fase 1, o projeto recebeu uma atualização de transparência
+e governança para orientar as próximas etapas. A revisão não altera os dados
+entregues nem os apresenta como dados clínicos: ela torna explícitas as
+limitações que precisam ser consideradas antes de qualquer experimento de
+Machine Learning.
+
+- foi incluída uma auditoria quantitativa da base numérica, com a distribuição
+  de sexo, idade, variável-alvo, diabetes, tabagismo e outros fatores;
+- a construção artificial de `doenca_cardiaca` foi documentada como uma regra
+  didática que pode ser reaprendida por um modelo;
+- o uso de `sexo` nessa regra foi destacado como possível fonte de associação
+  artificial e ponto de atenção em avaliações de fairness;
+- o conjunto visual passou a explicitar que possui 100 arquivos derivados de
+  apenas 10 registros de origem, e não 100 exames independentes;
+- a análise de anomalias em ECG permanece descrita como possibilidade futura,
+  pois não há rótulos clínicos por segmento neste conjunto.
+
+Os detalhes, os números da auditoria e as ações planejadas estão em
+[`docs/auditoria_dados_fase1.md`](docs/auditoria_dados_fase1.md) e
+[`docs/feedback_fase1.md`](docs/feedback_fase1.md).
+
 ## 📁 Estrutura de pastas
 
 As pastas abaixo foram organizadas de acordo com o tipo de dado e sua função no
@@ -108,6 +131,16 @@ classificação supervisionada. Como os valores são simulados e as relações e
 as colunas foram simplificadas, qualquer resultado obtido nele não tem valor
 clínico nem pode ser generalizado para uma população real.
 
+Em especial, `doenca_cardiaca` foi gerada a partir de uma regra probabilística
+do próprio script, usando idade, sexo, colesterol, pressão arterial, angina,
+`oldpeak`, tipo de dor, número de vasos, histórico familiar, tabagismo e
+diabetes. Assim, um modelo treinado com essas mesmas colunas pode obter bom
+desempenho apenas por reaprender uma relação definida pelo gerador. Esse uso é
+válido para demonstrar o fluxo técnico de uma classificação, mas suas métricas
+não devem ser interpretadas como evidência clínica. A distribuição observada e
+as associações do conjunto estão registradas na
+[auditoria dos dados](docs/auditoria_dados_fase1.md).
+
 ## Parte 2 — Dados textuais
 
 Foram extraídos dois textos em português sobre saúde cardiovascular:
@@ -165,7 +198,7 @@ As possibilidades de análise por Visão Computacional incluem:
 | --- | --- | --- |
 | Pré-processamento e identificação de traçado | Recortar a região útil do exame, reduzir ruídos visuais e localizar a linha do sinal. | Padroniza a entrada antes de uma análise automática. |
 | Detecção de padrões e bordas | Identificar o desenho do traçado, picos e mudanças de inclinação ao longo do ECG. | Mostra como características visuais podem ser transformadas em dados para comparação. |
-| Reconhecimento de anomalias | Procurar traçados que se diferenciem do padrão predominante. | Pode ser a base de sistemas de apoio à revisão de grandes volumes de exames. |
+| Exploração de possíveis anomalias | Procurar traçados que se diferenciem do padrão predominante, sem atribuir diagnóstico. | Pode orientar estudos futuros de apoio à revisão de grandes volumes de exames. |
 | Classificação de imagens | Em uma etapa futura, associar padrões a classes clínicas previamente rotuladas. | Ilustra o potencial de modelos que auxiliem profissionais na priorização de exames. |
 
 Essas aplicações podem agilizar a organização e a revisão de exames, mas não
@@ -173,6 +206,13 @@ substituem a interpretação de profissionais de saúde. Como este conjunto não
 traz rótulos clínicos por imagem, ele é adequado para exploração visual e
 preparo de dados; uma classificação médica exigiria rótulos confiáveis,
 validação clínica e avaliação de vieses antes de qualquer uso real.
+
+Embora existam 100 arquivos, eles foram produzidos a partir de 10 registros de
+origem da MIT-BIH, com dez segmentos por registro. Portanto, o total de imagens
+não equivale a 100 pacientes ou 100 exames independentes. A separação por
+registro continua sendo importante para evitar vazamento entre treino, validação
+e teste, mas a diversidade clínica do conjunto é limitada e precisará ser
+ampliada em etapas futuras.
 
 ## Acesso aos dados
 
@@ -190,15 +230,23 @@ Os dados numéricos são sintéticos, o que evita o uso de informações pessoai
 de prontuários. As imagens são dados públicos do PhysioNet e mantêm a atribuição
 à fonte. Ainda assim, as três bases têm limitações:
 
-- o dataset numérico foi criado com distribuições simplificadas e pode reproduzir
-  vieses de idade e sexo presentes em bases clássicas;
+- o dataset numérico foi criado com distribuições simplificadas; a auditoria
+  mostra, por exemplo, 64,7% de registros masculinos e uma variável-alvo
+  construída pelo próprio gerador. O uso de sexo no score exige atenção em
+  qualquer comparação futura entre grupos;
 - os textos são informativos e não representam conversas ou prontuários de
   pacientes;
-- a MIT-BIH é uma base histórica, com população e contexto de coleta próprios.
+- a MIT-BIH é uma base histórica, com população e contexto de coleta próprios;
+  além disso, as 100 imagens vêm de somente 10 registros de origem.
 
 Por isso, qualquer modelo treinado com esses arquivos deve ser tratado como
 exercício acadêmico. Antes de uso real, seriam necessários dados representativos,
 validação, revisão ética e medidas de segurança compatíveis com a LGPD.
+
+Nas próximas etapas, a equipe irá reportar distribuição dos dados, divisão entre
+treino e teste, métricas por classe e possíveis distorções observadas. Essas
+verificações não eliminam os limites da base, mas evitam que eles fiquem ocultos
+na interpretação dos resultados.
 
 ## 🔧 Como executar o código
 
@@ -261,6 +309,8 @@ ECG.
 
 - `0.1.0` — 02/09/2026: organização e entrega das bases numérica, textual e
   visual da Fase 1.
+- `0.1.1` — 08/09/2026: atualização de governança e auditoria em resposta à
+  avaliação da Fase 1.
 
 ## 📋 Licença
 
