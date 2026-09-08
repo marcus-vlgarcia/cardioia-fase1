@@ -1,0 +1,81 @@
+frase,situacao,grupo
+"Dor no peito começou de repente e estou suando frio.",alto risco,A01
+"Sinto pressão no tórax acompanhada de suor gelado.",alto risco,A01
+"Estou sem ar mesmo sentado e não consigo falar direito.",alto risco,A02
+"A respiração ficou difícil em repouso e mal completo uma frase.",alto risco,A02
+"Desmaiei durante a caminhada e continuo muito fraco.",alto risco,A03
+"Perdi os sentidos enquanto andava e ainda sinto fraqueza.",alto risco,A03
+"Meu peito aperta e a dor vai para o braço esquerdo.",alto risco,A04
+"Uma pressão no peito se espalha pelo braço.",alto risco,A04
+"O coração dispara e parece que vou desmaiar.",alto risco,A05
+"Tenho palpitações junto de sensação de perder os sentidos.",alto risco,A05
+"Acordei sufocado e preciso ficar sentado para respirar.",alto risco,A06
+"Não consigo respirar deitado e acordei buscando ar.",alto risco,A06
+"Sinto dor intensa no peito que não passa há meia hora.",alto risco,A07
+"Uma dor forte no tórax continua mesmo após parar tudo.",alto risco,A07
+"Estou com lábios arroxeados e dificuldade para respirar.",alto risco,A08
+"Minha boca ficou roxa enquanto eu tentava puxar o ar.",alto risco,A08
+"A dor no peito vem com enjoo e suor frio.",alto risco,A09
+"Tenho náusea e transpiração fria junto com pressão no peito.",alto risco,A09
+"De repente fiquei confuso e meu braço perdeu a força.",alto risco,A10
+"Comecei a falar enrolado e um lado do corpo ficou fraco.",alto risco,A10
+"Uma dor súbita muito forte atravessa o peito e as costas.",alto risco,A11
+"Surgiu uma dor intensa no tórax que se espalhou pelas costas.",alto risco,A11
+"Minhas pernas incharam e estou com falta de ar mesmo parado.",alto risco,A12
+"Os tornozelos estão inchados e respirar sentado ficou difícil.",alto risco,A12
+"Sinto batimentos irregulares e uma dor forte no peito.",alto risco,A13
+"O coração bate fora do ritmo e o tórax dói muito.",alto risco,A13
+"Estou tossindo sangue e fiquei sem ar de repente.",alto risco,A14
+"Saiu sangue na tosse junto de dificuldade súbita para respirar.",alto risco,A14
+"A pressão no peito piora e estou quase apagando.",alto risco,A15
+"Sinto aperto crescente no tórax e sensação de desmaio.",alto risco,A15
+"Não tenho dor no peito mas sinto falta de ar intensa e suor frio.",alto risco,A16
+"Sem dor torácica porém com respiração muito difícil e suor gelado.",alto risco,A16
+"Tenho diabetes e comecei com enjoo intenso e suor frio repentino.",alto risco,A17
+"Sou diabético e surgiram náusea forte e transpiração fria do nada.",alto risco,A17
+"A dor no peito apareceu enquanto eu descansava e continua aumentando.",alto risco,A18
+"Mesmo em repouso a pressão no tórax não para de piorar.",alto risco,A18
+"Caí desacordado após sentir o coração muito acelerado.",alto risco,A19
+"Depois das palpitações perdi a consciência e fui ao chão.",alto risco,A19
+"Estou com dor no peito e respirando com muita dificuldade agora.",alto risco,A20
+"O aperto no tórax acompanha uma falta de ar muito forte neste momento.",alto risco,A20
+"Senti cansaço leve após correr e já passou com descanso.",baixo risco,B01
+"Fiquei cansado depois do exercício mas me recuperei por completo.",baixo risco,B01
+"Meu ombro está levemente dolorido após carregar caixas e está melhorando.",baixo risco,B02
+"Depois da mudança fiquei com incômodo no ombro que diminui a cada dia.",baixo risco,B02
+"Estou com uma coceira pequena no braço sem outros sintomas.",baixo risco,B03
+"Uma picada deixou meu braço coçando um pouco e me sinto bem.",baixo risco,B03
+"Meu nariz escorre um pouco mas respiro normalmente.",baixo risco,B04
+"Tenho coriza leve sem dificuldade para respirar.",baixo risco,B04
+"Estou com sono após dormir pouco e consigo fazer minhas tarefas.",baixo risco,B05
+"Dormi tarde e hoje sinto sonolência leve sem atrapalhar a rotina.",baixo risco,B05
+"Sinto rigidez leve no pescoço depois de usar o computador.",baixo risco,B06
+"O pescoço ficou um pouco tenso após horas na mesma posição.",baixo risco,B06
+"A perna ficou dolorida depois do treino e melhorou ao descansar.",baixo risco,B07
+"Senti dor muscular leve após agachamentos e já está passando.",baixo risco,B07
+"Tive soluço por alguns minutos e agora estou bem.",baixo risco,B08
+"Depois do almoço solucei um pouco mas parou sozinho.",baixo risco,B08
+"Estou com garganta levemente arranhando sem falta de ar.",baixo risco,B09
+"A garganta incomoda um pouco mas consigo respirar e engolir normalmente.",baixo risco,B09
+"Senti a boca seca depois de falar muito e melhorei ao beber água.",baixo risco,B10
+"Minha boca ressecou durante a apresentação e água resolveu o incômodo.",baixo risco,B10
+"Tenho uma bolha pequena no pé após usar um sapato novo.",baixo risco,B11
+"O calçado apertado deixou uma bolha que incomoda pouco ao andar.",baixo risco,B11
+"Meu olho coça levemente depois de ficar em ambiente com poeira.",baixo risco,B12
+"Fiquei com irritação discreta no olho após limpar a estante.",baixo risco,B12
+"Sinto um incômodo leve no punho depois de digitar por horas.",baixo risco,B13
+"O punho está um pouco dolorido após usar o teclado e melhora com pausa.",baixo risco,B13
+"Estou espirrando mas não tenho febre nem dificuldade para respirar.",baixo risco,B14
+"Tive alguns espirros hoje e continuo respirando sem esforço.",baixo risco,B14
+"Minha pele ficou ressecada e coça um pouco no cotovelo.",baixo risco,B15
+"O cotovelo tem uma área de pele seca com leve coceira.",baixo risco,B15
+"Não sinto dor no peito nem falta de ar e só tenho coriza leve.",baixo risco,B16
+"Sem pressão no tórax ou dificuldade para respirar apenas nariz escorrendo.",baixo risco,B16
+"Tenho diabetes e hoje apenas uma coceira leve no braço sem outros sintomas.",baixo risco,B17
+"Sou diabético e estou bem exceto por uma pequena irritação na pele.",baixo risco,B17
+"Sinto leve desconforto na lombar após ficar sentado e melhora ao mudar de posição.",baixo risco,B18
+"Minhas costas incomodaram um pouco na cadeira e melhoraram após levantar.",baixo risco,B18
+"Estou rouco depois de cantar mas respiro bem e sigo minha rotina.",baixo risco,B19
+"A voz ficou fraca após falar alto sem qualquer dificuldade respiratória.",baixo risco,B19
+"Tive uma cãibra breve na panturrilha depois do exercício e já passou.",baixo risco,B20
+"A perna contraiu por poucos segundos após treinar e agora está normal.",baixo risco,B20
