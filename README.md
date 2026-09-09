@@ -4,7 +4,42 @@
   <a href="https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width="40%" height="40%"></a>
 </p>
 
-# CardioIA — Fase 1: Batimentos de Dados
+# CardioIA — PulseIA
+
+## Fase 2 — Diagnóstico Automatizado: IA no Estetoscópio Digital
+
+O módulo da Fase 2 associa sintomas a possíveis condições e classifica frases
+simuladas em `baixo risco` ou `alto risco`. As explicações e arquivos da Fase 1
+continuam abaixo como registro da preparação dos dados.
+
+| Entregável da Fase 2 | Acesso |
+| --- | --- |
+| 10 relatos completos | [relatos_sintomas.txt](fase2/data/relatos_sintomas.txt) |
+| Mapa de conhecimento com 16 associações | [mapa_conhecimento.csv](fase2/data/mapa_conhecimento.csv) |
+| Código Python de extração | [extrair_sintomas.py](fase2/src/extrair_sintomas.py) |
+| Base simulada com 80 frases rotuladas | [frases_risco.csv](fase2/data/frases_risco.csv) |
+| Notebook executado: TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](fase2/notebooks/classificador_risco.ipynb) |
+| Instalação e execução | [Guia da Fase 2](fase2/README.md) |
+| Resultados e análise dos erros | [Análise da avaliação](fase2/docs/avaliacao.md) |
+| Fontes, critérios dos rótulos e vieses | [Dados e limites](fase2/docs/dados_e_limites.md) |
+
+### Vídeo de demonstração
+
+**Pendente para entrega:** publicar o vídeo no YouTube como **não listado** e
+incluir o link nesta seção. O arquivo local e o roteiro estão preparados à parte;
+sem o link do YouTube, o requisito do vídeo ainda não está concluído.
+
+### Resultados da Fase 2
+
+O teste reservado teve 16 frases de oito cenários, com **87,5% de acurácia**
+(14 acertos), contra 50% do baseline. O recall de alto risco foi 87,5%, com um
+falso negativo. São resultados de uma base pequena e simulada, sem validade
+clínica. As paráfrases ficam no mesmo conjunto, e o TF-IDF é ajustado somente
+no treino. O notebook também mostra os erros de negação nos testes adicionais.
+
+![Matriz de confusão do teste](fase2/outputs/matriz_confusao.png)
+
+## Fase 1 — Batimentos de Dados
 
 ## Grupo - PulseIA
 
@@ -68,6 +103,14 @@ de reprodução e geração dos materiais.
 
 ```
 cardioia-fase1/
+├── fase2/
+│   ├── data/                     # Relatos, mapa e frases rotuladas
+│   ├── docs/                     # Fontes, avaliação e roteiro do vídeo
+│   ├── notebooks/                # Classificador executado
+│   ├── outputs/                  # Resultados reproduzíveis
+│   ├── src/                      # Extração e execução
+│   ├── tests/                    # Casos de teste do extrator
+│   └── README.md
 ├── data/numeric/
 │   └── dataset_pacientes_cardiacos.csv
 ├── assets/
@@ -307,6 +350,9 @@ ECG.
 
 ## 🗃 Histórico de lançamentos
 
+- `0.2.0` — 08/09/2026: implementação das duas partes da Fase 2, notebook
+  executado, análise de erros e demonstração preparada; publicação no YouTube
+  pendente.
 - `0.1.0` — 02/09/2026: organização e entrega das bases numérica, textual e
   visual da Fase 1.
 - `0.1.1` — 08/09/2026: atualização de governança e auditoria em resposta à

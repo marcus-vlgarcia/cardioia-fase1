@@ -1,0 +1,17 @@
+frase,situacao,grupo,predicao,acerto
+Sinto dor intensa no peito que não passa há meia hora.,alto risco,A07,alto risco,True
+Uma dor forte no tórax continua mesmo após parar tudo.,alto risco,A07,alto risco,True
+Estou com lábios arroxeados e dificuldade para respirar.,alto risco,A08,baixo risco,False
+Minha boca ficou roxa enquanto eu tentava puxar o ar.,alto risco,A08,alto risco,True
+Uma dor súbita muito forte atravessa o peito e as costas.,alto risco,A11,alto risco,True
+Surgiu uma dor intensa no tórax que se espalhou pelas costas.,alto risco,A11,alto risco,True
+A pressão no peito piora e estou quase apagando.,alto risco,A15,alto risco,True
+Sinto aperto crescente no tórax e sensação de desmaio.,alto risco,A15,alto risco,True
+Senti cansaço leve após correr e já passou com descanso.,baixo risco,B01,baixo risco,True
+Fiquei cansado depois do exercício mas me recuperei por completo.,baixo risco,B01,baixo risco,True
+Meu ombro está levemente dolorido após carregar caixas e está melhorando.,baixo risco,B02,baixo risco,True
+Depois da mudança fiquei com incômodo no ombro que diminui a cada dia.,baixo risco,B02,baixo risco,True
+Meu olho coça levemente depois de ficar em ambiente com poeira.,baixo risco,B12,baixo risco,True
+Fiquei com irritação discreta no olho após limpar a estante.,baixo risco,B12,alto risco,False
+Sinto leve desconforto na lombar após ficar sentado e melhora ao mudar de posição.,baixo risco,B18,baixo risco,True
+Minhas costas incomodaram um pouco na cadeira e melhoraram após levantar.,baixo risco,B18,baixo risco,True

@@ -1,0 +1,17 @@
+sintoma_1,sintoma_2,doenca_associada
+dor no peito,suor frio,Possível síndrome coronariana aguda (inclui infarto)
+aperto no torax,falta de ar,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,nausea,Possível síndrome coronariana aguda (inclui infarto)
+pressao no peito,suor frio,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,dor no braco,Possível síndrome coronariana aguda (inclui infarto)
+cansaco constante,inchaco nas pernas,Possível insuficiência cardíaca
+falta de ar ao deitar,inchaco nos tornozelos,Possível insuficiência cardíaca
+cansaco ao esforco,falta de ar ao deitar,Possível insuficiência cardíaca
+fadiga,inchaco nas pernas,Possível insuficiência cardíaca
+palpitacoes,tontura,Possível arritmia cardíaca
+coracao acelerado,sensacao de desmaio,Possível arritmia cardíaca
+batimentos irregulares,tontura,Possível arritmia cardíaca
+palpitacoes,desmaio,Possível arritmia cardíaca
+dor no peito ao caminhar,melhora ao repousar,Possível angina de esforço
+aperto no torax durante esforco,alivio com repouso,Possível angina de esforço
+dor no peito ao subir escadas,melhora com repouso,Possível angina de esforço
