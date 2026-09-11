@@ -15,7 +15,7 @@ continuam abaixo como registro da preparação dos dados.
 | Entregável da Fase 2 | Acesso |
 | --- | --- |
 | 10 relatos completos | [relatos_sintomas.txt](fase2/data/relatos_sintomas.txt) |
-| Mapa de conhecimento com 43 associações | [mapa_conhecimento.csv](fase2/data/mapa_conhecimento.csv) |
+| Mapa de conhecimento com 83 associações | [mapa_conhecimento.csv](fase2/data/mapa_conhecimento.csv) |
 | Código Python de extração | [extrair_sintomas.py](fase2/src/extrair_sintomas.py) |
 | Base simulada com 80 frases rotuladas | [frases_risco.csv](fase2/data/frases_risco.csv) |
 | Notebook executado: TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](fase2/notebooks/classificador_risco.ipynb) |
