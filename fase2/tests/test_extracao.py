@@ -6,6 +6,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
 from extrair_sintomas import analisar, expressoes_mais_especificas, ler_mapa, montar_frase
+from preprocessar_texto import preparar_texto
 
 
 class TestExtracao(unittest.TestCase):
@@ -52,6 +53,22 @@ class TestExtracao(unittest.TestCase):
         self.assertEqual(len(frases), 10)
         for frase in frases:
             self.assertNotIn("insuficiente", analisar(frase, self.mapa)["associacoes"])
+
+    def test_marcacao_de_negacao_para_o_classificador(self):
+        texto = preparar_texto("Não sinto dor no peito nem suor frio; respiro normalmente.")
+        self.assertIn("neg_sintoma_toracico", texto)
+        self.assertIn("neg_suor_frio", texto)
+        self.assertIn("neg_dificuldade_respiratoria", texto)
+
+    def test_duas_negacoes_na_mesma_frase(self):
+        texto = preparar_texto("Não tenho falta de ar nem dor no peito.")
+        self.assertIn("neg_dificuldade_respiratoria", texto)
+        self.assertIn("neg_sintoma_toracico", texto)
+
+    def test_contraste_e_preservado_no_preprocessamento(self):
+        texto = preparar_texto("Não tenho falta de ar, mas sinto dor no peito forte.")
+        self.assertIn("neg_dificuldade_respiratoria", texto)
+        self.assertIn("dor no peito forte", texto)
 
 
 if __name__ == "__main__":

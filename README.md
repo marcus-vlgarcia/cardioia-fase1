@@ -17,7 +17,7 @@ continuam abaixo como registro da preparação dos dados.
 | 10 relatos completos | [relatos_sintomas.txt](fase2/data/relatos_sintomas.txt) |
 | Mapa de conhecimento com 83 associações | [mapa_conhecimento.csv](fase2/data/mapa_conhecimento.csv) |
 | Código Python de extração | [extrair_sintomas.py](fase2/src/extrair_sintomas.py) |
-| Base simulada com 240 frases rotuladas | [frases_risco.csv](fase2/data/frases_risco.csv) |
+| Base simulada com 288 frases rotuladas | [frases_risco.csv](fase2/data/frases_risco.csv) |
 | Notebook executado: TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](fase2/notebooks/classificador_risco.ipynb) |
 | Instalação e execução | [Guia da Fase 2](fase2/README.md) |
 | Resultados e análise dos erros | [Análise da avaliação](fase2/docs/avaliacao.md) |
@@ -31,14 +31,12 @@ grupo; sem o link do YouTube, o requisito do vídeo ainda não está concluído.
 
 ### Resultados da Fase 2
 
-Após ampliar a base para 240 frases, o modelo usa 184 para treino, 40 para teste
-novo e 16 do teste antigo para regressão. No mesmo teste novo, a versão anterior
-acertou 70% e a revisada **82,5% (33/40)**, contra 50% do baseline. O recall de
-alto risco passou de 75% para 80%; ainda há quatro falsos negativos e três falsos
-positivos. Os antigos 87,5% foram medidos em outro teste e não são diretamente
-comparáveis. As paráfrases ficam juntas e os parâmetros são escolhidos somente
-no treino. A [avaliação completa](fase2/docs/avaliacao.md) registra melhorias,
-erros e limites de uma base sintética sem validação clínica.
+Após ampliar a base para 288 frases, o modelo usa 208 para treino, 24 para teste
+final e 56 dos testes já analisados como regressão. A configuração e o limiar de
+triagem foram escolhidos somente no treino. No teste final, atingiu **91,7% (22/24)**,
+contra 50% do baseline, com recall de alto risco de 100%, nenhum falso negativo e
+dois falsos positivos. O conjunto é pequeno e sintético; a [avaliação completa](fase2/docs/avaliacao.md)
+registra as limitações, os erros e os próximos passos.
 
 ![Matriz de confusão do teste](fase2/outputs/matriz_confusao.png)
 
