@@ -1,11 +1,13 @@
 """Casos que evitam associações silenciosamente incorretas no extrator."""
 import sys
+import tempfile
 import unittest
+import csv
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
-from extrair_sintomas import analisar, expressoes_mais_especificas, ler_mapa, montar_frase
+from extrair_sintomas import analisar, expressoes_mais_especificas, ler_mapa, montar_frase, salvar_historico
 from preprocessar_texto import preparar_texto
 
 
@@ -69,6 +71,17 @@ class TestExtracao(unittest.TestCase):
         texto = preparar_texto("Não tenho falta de ar, mas sinto dor no peito forte.")
         self.assertIn("neg_dificuldade_respiratoria", texto)
         self.assertIn("dor no peito forte", texto)
+
+    def test_historico_interativo_acrescenta_resultados(self):
+        resultado = analisar("Há dois dias sinto dor no peito e suor frio, e parei de caminhar.", self.mapa)
+        with tempfile.TemporaryDirectory() as diretorio:
+            caminho = Path(diretorio) / "historico.csv"
+            salvar_historico(resultado, caminho)
+            salvar_historico(resultado, caminho)
+            with caminho.open(encoding="utf-8", newline="") as arquivo:
+                linhas = list(csv.DictReader(arquivo))
+        self.assertEqual(len(linhas), 2)
+        self.assertIn("coronariana", linhas[0]["associacoes"])
 
 
 if __name__ == "__main__":

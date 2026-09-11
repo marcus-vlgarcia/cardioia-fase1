@@ -80,6 +80,18 @@ def montar_frase(tempo, sintomas, impacto):
     return f"{tempo[:1].upper()}{tempo[1:]}, sinto {sintomas}, e {impacto}."
 
 
+def salvar_historico(resultado, caminho):
+    """Acrescenta um relato interativo e sua análise a um CSV local separado."""
+    caminho = Path(caminho)
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    possui_conteudo = caminho.exists() and caminho.stat().st_size > 0
+    with caminho.open("a", encoding="utf-8", newline="") as arquivo:
+        writer = csv.DictWriter(arquivo, fieldnames=resultado.keys(), lineterminator="\n")
+        if not possui_conteudo:
+            writer.writeheader()
+        writer.writerow(resultado)
+
+
 def coletar_relato_interativo():
     """Abre três campos de resposta para criar um relato adicional."""
     try:
@@ -128,17 +140,20 @@ def main():
     parser.add_argument("--frases", type=Path, default=RAIZ / "data/relatos_sintomas.txt")
     parser.add_argument("--mapa", type=Path, default=RAIZ / "data/mapa_conhecimento.csv")
     parser.add_argument("--saida", type=Path, default=RAIZ / "outputs/diagnosticos_sugeridos.csv")
+    parser.add_argument("--historico", type=Path, default=RAIZ / "outputs/relatos_interativos.csv",
+                        help="CSV local que guarda os relatos enviados no modo interativo.")
     parser.add_argument("--interativo", action="store_true",
                         help="Abre três campos para criar e analisar um relato adicional.")
     args = parser.parse_args()
     frases = [f.strip() for f in args.frases.read_text(encoding="utf-8").splitlines() if f.strip()]
     if not frases:
         parser.error("O arquivo de relatos está vazio.")
+    mapa = ler_mapa(args.mapa)
     if args.interativo:
         frase_adicional = coletar_relato_interativo()
         frases.append(frase_adicional)
+        salvar_historico(analisar(frase_adicional, mapa), args.historico)
         print(f"Relato formulado: {frase_adicional}")
-    mapa = ler_mapa(args.mapa)
     resultados = [analisar(frase, mapa) for frase in frases]
     args.saida.parent.mkdir(parents=True, exist_ok=True)
     with args.saida.open("w", encoding="utf-8", newline="") as arquivo:
