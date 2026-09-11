@@ -12,7 +12,7 @@ triagem; não realiza diagnóstico médico.
 | Critério do enunciado | Arquivo |
 | --- | --- |
 | 10 relatos completos de sintomas | [relatos_sintomas.txt](data/relatos_sintomas.txt) |
-| Mapa de conhecimento | [mapa_conhecimento.csv](data/mapa_conhecimento.csv) — 16 associações |
+| Mapa de conhecimento | [mapa_conhecimento.csv](data/mapa_conhecimento.csv) — 43 associações possíveis |
 | Código de extração funcional | [extrair_sintomas.py](src/extrair_sintomas.py) |
 | Base de frases e rótulos | [frases_risco.csv](data/frases_risco.csv) — 80 frases, 40 por classe |
 | Notebook com TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](notebooks/classificador_risco.ipynb) |
@@ -35,29 +35,22 @@ python -m unittest discover -s fase2/tests -v
 ```
 
 O primeiro script lê o `.txt` e o mapa e salva as dez associações. É possível
-usar outros arquivos com `--frases`, `--mapa` e `--saida`. O segundo executa
+usar outros arquivos com `--frases`, `--mapa` e `--saida`. Para demonstrar um
+novo relato, execute `python fase2/src/extrair_sintomas.py --interativo`: três
+campos pedem sintomas, impacto na rotina e tempo de início. O programa formula
+a frase no padrão dos relatos e acrescenta sua análise ao CSV de saída, sem
+alterar o arquivo original com os dez exemplos. O segundo executa
 todas as células e salva o notebook com tabelas e gráficos, além dos arquivos
 em `outputs`. Também é possível abrir o notebook no VS Code ou Jupyter usando
 o mesmo ambiente e executar todas as células em ordem.
-
-Para gerar novamente a demonstração legendada de três minutos, após executar
-o notebook:
-
-```bash
-python -m pip install -r fase2/requirements-video.txt
-python fase2/src/gerar_video.py
-```
-
-O vídeo fica em `fase2/outputs/demonstracao_fase2.mp4`. A geração requer fonte
-Arial no macOS ou DejaVu Sans no Linux. O arquivo de vídeo não é versionado;
-os dados, resultados, roteiro e código usados para produzi-lo estão no GitHub.
 
 ## Como funciona
 
 O extrator normaliza acentos e maiúsculas, procura expressões inteiras e verifica
 negação simples. Cada linha do mapa exige os dois sintomas. Não havendo um par
-compatível, retorna “Associação insuficiente no mapa”. Um relato pode receber
-mais de uma associação; nenhuma delas é um diagnóstico confirmado.
+compatível, retorna “Associação insuficiente no mapa”. O mapa foi ampliado para
+registrar mais de uma possibilidade para sintomas parecidos. Um relato pode
+receber mais de uma associação; nenhuma delas é um diagnóstico confirmado.
 
 O classificador usa 64 frases de treino e 16 de teste, separadas por cenário com
 seed 42. As paráfrases de cada cenário ficam juntas. O TF-IDF é ajustado apenas

@@ -15,7 +15,7 @@ continuam abaixo como registro da preparação dos dados.
 | Entregável da Fase 2 | Acesso |
 | --- | --- |
 | 10 relatos completos | [relatos_sintomas.txt](fase2/data/relatos_sintomas.txt) |
-| Mapa de conhecimento com 16 associações | [mapa_conhecimento.csv](fase2/data/mapa_conhecimento.csv) |
+| Mapa de conhecimento com 43 associações | [mapa_conhecimento.csv](fase2/data/mapa_conhecimento.csv) |
 | Código Python de extração | [extrair_sintomas.py](fase2/src/extrair_sintomas.py) |
 | Base simulada com 80 frases rotuladas | [frases_risco.csv](fase2/data/frases_risco.csv) |
 | Notebook executado: TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](fase2/notebooks/classificador_risco.ipynb) |
@@ -26,8 +26,8 @@ continuam abaixo como registro da preparação dos dados.
 ### Vídeo de demonstração
 
 **Pendente para entrega:** publicar o vídeo no YouTube como **não listado** e
-incluir o link nesta seção. O arquivo local e o roteiro estão preparados à parte;
-sem o link do YouTube, o requisito do vídeo ainda não está concluído.
+incluir o link nesta seção. A gravação de tela e a narração serão feitas pelo
+grupo; sem o link do YouTube, o requisito do vídeo ainda não está concluído.
 
 ### Resultados da Fase 2
 
@@ -105,7 +105,7 @@ de reprodução e geração dos materiais.
 cardioia-fase1/
 ├── fase2/
 │   ├── data/                     # Relatos, mapa e frases rotuladas
-│   ├── docs/                     # Fontes, avaliação e roteiro do vídeo
+│   ├── docs/                     # Fontes e avaliação
 │   ├── notebooks/                # Classificador executado
 │   ├── outputs/                  # Resultados reproduzíveis
 │   ├── src/                      # Extração e execução

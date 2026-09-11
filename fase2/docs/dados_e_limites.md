@@ -7,12 +7,14 @@ para esta simulação acadêmica. Não são prontuários, downloads de relatos r
 ou registros de atendimento. Os textos institucionais da Fase 1 continuam
 preservados, mas não foram transformados em exemplos rotulados de pacientes.
 
-O mapa contém 16 pares de expressões e quatro categorias de possíveis
-condições. É uma tabela de associações didáticas, não uma ontologia clínica
-formal. Vários sintomas são compartilhados por doenças diferentes. A ocorrência
-de um par não confirma a condição, e a ausência de correspondência não exclui
-doença. Os 10 relatos incluem início, sintomas e impacto na rotina; o programa
-extrai os sintomas, sem tentar interpretar automaticamente duração ou gravidade.
+O mapa contém 43 pares de expressões e oito categorias de possíveis condições.
+Ele registra combinações distintas que podem apontar para mais de uma hipótese,
+como dor no peito relacionada a síndromes coronarianas, angina, refluxo ou causas
+inflamatórias. É uma tabela de associações didáticas, não uma ontologia clínica
+formal. A ocorrência de um par não confirma a condição, e a ausência de
+correspondência não exclui doença. Os 10 relatos incluem início, sintomas e
+impacto na rotina. A opção interativa cria um décimo primeiro relato temporário
+na saída, a partir de três respostas curtas, sem alterar os dez exemplos.
 
 ## Critérios dos rótulos
 

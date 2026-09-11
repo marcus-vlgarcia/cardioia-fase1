@@ -4,14 +4,41 @@ aperto no torax,falta de ar,Possível síndrome coronariana aguda (inclui infart
 dor no peito,nausea,Possível síndrome coronariana aguda (inclui infarto)
 pressao no peito,suor frio,Possível síndrome coronariana aguda (inclui infarto)
 dor no peito,dor no braco,Possível síndrome coronariana aguda (inclui infarto)
+aperto no peito,dor no braco,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,sensacao de desmaio,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,palidez,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,falta de ar,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,suor intenso,Possível síndrome coronariana aguda (inclui infarto)
 cansaco constante,inchaco nas pernas,Possível insuficiência cardíaca
 falta de ar ao deitar,inchaco nos tornozelos,Possível insuficiência cardíaca
 cansaco ao esforco,falta de ar ao deitar,Possível insuficiência cardíaca
 fadiga,inchaco nas pernas,Possível insuficiência cardíaca
+falta de ar,inchaco nas pernas,Possível insuficiência cardíaca
+tosse noturna,falta de ar ao deitar,Possível insuficiência cardíaca
+cansaco extremo,inchaco nos pes,Possível insuficiência cardíaca
+falta de ar ao caminhar,ganho de peso rapido,Possível insuficiência cardíaca
 palpitacoes,tontura,Possível arritmia cardíaca
 coracao acelerado,sensacao de desmaio,Possível arritmia cardíaca
 batimentos irregulares,tontura,Possível arritmia cardíaca
 palpitacoes,desmaio,Possível arritmia cardíaca
+coracao acelerado,falta de ar,Possível arritmia cardíaca
+batimentos irregulares,cansaco,Possível arritmia cardíaca
+palpitacoes,dor no peito,Possível arritmia cardíaca
 dor no peito ao caminhar,melhora ao repousar,Possível angina de esforço
 aperto no torax durante esforco,alivio com repouso,Possível angina de esforço
 dor no peito ao subir escadas,melhora com repouso,Possível angina de esforço
+pressao no peito durante esforco,melhora ao repousar,Possível angina de esforço
+aperto no peito ao caminhar,alivio com repouso,Possível angina de esforço
+falta de ar ao esforco,dor no peito ao caminhar,Possível angina de esforço
+dor no peito,azia,Possível refluxo gastroesofágico
+queimacao no peito,regurgitacao,Possível refluxo gastroesofágico
+desconforto no peito,azia apos comer,Possível refluxo gastroesofágico
+dor no peito,dor ao respirar,Possível pericardite ou outra causa inflamatória
+dor no peito,piora ao deitar,Possível pericardite ou outra causa inflamatória
+dor no peito,melhora ao inclinar para frente,Possível pericardite ou outra causa inflamatória
+aperto no peito,respiracao acelerada,Possível ansiedade ou crise de pânico
+palpitacoes,formigamento nas maos,Possível ansiedade ou crise de pânico
+falta de ar,tremores,Possível ansiedade ou crise de pânico
+tontura,visao embacada,Possível alteração de pressão arterial
+dor de cabeca,visao embacada,Possível alteração de pressão arterial
+fraqueza,tontura,Possível alteração de pressão arterial
