@@ -34,7 +34,7 @@ class TestExtracao(unittest.TestCase):
         self.assertIn("arritmia", resultado["associacoes"])
 
     def test_mapa_ampliado_e_ambiguo(self):
-        self.assertGreaterEqual(len(self.mapa), 40)
+        self.assertGreaterEqual(len(self.mapa), 80)
         resultado = analisar("Tenho dor no peito, suor frio, palpitações e tontura.", self.mapa)
         self.assertIn("coronariana", resultado["associacoes"])
         self.assertIn("arritmia", resultado["associacoes"])

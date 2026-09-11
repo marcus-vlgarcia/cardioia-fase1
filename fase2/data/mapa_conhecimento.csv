@@ -9,6 +9,15 @@ dor no peito,sensacao de desmaio,Possível síndrome coronariana aguda (inclui i
 dor no peito,palidez,Possível síndrome coronariana aguda (inclui infarto)
 dor no peito,falta de ar,Possível síndrome coronariana aguda (inclui infarto)
 dor no peito,suor intenso,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito,dor na mandibula,Possível síndrome coronariana aguda (inclui infarto)
+dor no peito ao caminhar,melhora ao repousar,Possível angina de esforço
+aperto no torax durante esforco,alivio com repouso,Possível angina de esforço
+dor no peito ao subir escadas,melhora com repouso,Possível angina de esforço
+pressao no peito durante esforco,melhora ao repousar,Possível angina de esforço
+aperto no peito ao caminhar,alivio com repouso,Possível angina de esforço
+falta de ar ao esforco,dor no peito ao caminhar,Possível angina de esforço
+dor no peito ao esforco,alivio com repouso,Possível angina de esforço
+cansaco ao esforco,pressao no peito durante esforco,Possível angina de esforço
 cansaco constante,inchaco nas pernas,Possível insuficiência cardíaca
 falta de ar ao deitar,inchaco nos tornozelos,Possível insuficiência cardíaca
 cansaco ao esforco,falta de ar ao deitar,Possível insuficiência cardíaca
@@ -17,6 +26,10 @@ falta de ar,inchaco nas pernas,Possível insuficiência cardíaca
 tosse noturna,falta de ar ao deitar,Possível insuficiência cardíaca
 cansaco extremo,inchaco nos pes,Possível insuficiência cardíaca
 falta de ar ao caminhar,ganho de peso rapido,Possível insuficiência cardíaca
+falta de ar durante atividades,tosse noturna,Possível insuficiência cardíaca
+ganho de peso rapido,inchaco nas pernas,Possível insuficiência cardíaca
+inchaco no abdomen,perda de apetite,Possível insuficiência cardíaca
+nocturia,inchaco nos tornozelos,Possível insuficiência cardíaca
 palpitacoes,tontura,Possível arritmia cardíaca
 coracao acelerado,sensacao de desmaio,Possível arritmia cardíaca
 batimentos irregulares,tontura,Possível arritmia cardíaca
@@ -24,21 +37,48 @@ palpitacoes,desmaio,Possível arritmia cardíaca
 coracao acelerado,falta de ar,Possível arritmia cardíaca
 batimentos irregulares,cansaco,Possível arritmia cardíaca
 palpitacoes,dor no peito,Possível arritmia cardíaca
-dor no peito ao caminhar,melhora ao repousar,Possível angina de esforço
-aperto no torax durante esforco,alivio com repouso,Possível angina de esforço
-dor no peito ao subir escadas,melhora com repouso,Possível angina de esforço
-pressao no peito durante esforco,melhora ao repousar,Possível angina de esforço
-aperto no peito ao caminhar,alivio com repouso,Possível angina de esforço
-falta de ar ao esforco,dor no peito ao caminhar,Possível angina de esforço
+palpitacoes,escurecimento da vista,Possível arritmia cardíaca
+palpitacoes,palidez,Possível arritmia cardíaca
+falta de ar ao esforco,cansaco progressivo,Possível valvulopatia (inclui estenose aórtica)
+dor no peito,desmaio,Possível valvulopatia (inclui estenose aórtica)
+tontura,desmaio,Possível valvulopatia (inclui estenose aórtica)
+palpitacoes,cansaco ao esforco,Possível valvulopatia (inclui estenose aórtica)
+falta de ar,dor no peito,Possível valvulopatia (inclui estenose aórtica)
+dor no peito,dor ao respirar,Possível pericardite
+dor no peito,piora ao deitar,Possível pericardite
+dor no peito,melhora ao inclinar para frente,Possível pericardite
+dor no peito,febre baixa,Possível pericardite
+dor no peito,tosse,Possível pericardite
+dor no peito,inspiracao profunda,Possível pericardite
+dor no peito,palpitacoes,Possível miocardite
+dor no peito,cansaco extremo,Possível miocardite
+falta de ar,palpitacoes,Possível miocardite
+dor no peito,infeccao recente,Possível miocardite
+dor no peito,falta de ar apos estresse intenso,Possível cardiomiopatia por estresse (Takotsubo)
+dor no peito,cansaco apos estresse intenso,Possível cardiomiopatia por estresse (Takotsubo)
+falta de ar,tontura apos estresse intenso,Possível cardiomiopatia por estresse (Takotsubo)
+dor no peito subita,dor nas costas,Possível dissecção aguda de aorta
+dor rasgando,dor nas costas,Possível dissecção aguda de aorta
+dor no peito muito intensa,dor nas costas,Possível dissecção aguda de aorta
+dor no peito subita,assimetria de pulsos,Possível dissecção aguda de aorta
+dor no peito,irradiacao para as costas,Possível dissecção aguda de aorta
+dor de cabeca,visao embacada,Possível alteração de pressão arterial
+tontura,visao embacada,Possível alteração de pressão arterial
+fraqueza,tontura,Possível alteração de pressão arterial
+dor de cabeca,sangramento nasal,Possível alteração de pressão arterial
+falta de ar subita,dor no peito,Possível tromboembolismo pulmonar
+respiracao curta e rapida,palpitacoes,Possível tromboembolismo pulmonar
+tosse com sangue,dor no peito,Possível tromboembolismo pulmonar
+falta de ar subita,desmaio,Possível tromboembolismo pulmonar
 dor no peito,azia,Possível refluxo gastroesofágico
 queimacao no peito,regurgitacao,Possível refluxo gastroesofágico
 desconforto no peito,azia apos comer,Possível refluxo gastroesofágico
-dor no peito,dor ao respirar,Possível pericardite ou outra causa inflamatória
-dor no peito,piora ao deitar,Possível pericardite ou outra causa inflamatória
-dor no peito,melhora ao inclinar para frente,Possível pericardite ou outra causa inflamatória
+queimacao no peito,melhora com antiacido,Possível refluxo gastroesofágico
+dor no peito,dor a palpacao,Possível dor musculoesquelética da parede torácica
+dor no peito,piora ao movimentar o braco,Possível dor musculoesquelética da parede torácica
+dor no peito,trauma recente,Possível dor musculoesquelética da parede torácica
+dor no peito,dor ao movimentar o tronco,Possível dor musculoesquelética da parede torácica
 aperto no peito,respiracao acelerada,Possível ansiedade ou crise de pânico
 palpitacoes,formigamento nas maos,Possível ansiedade ou crise de pânico
 falta de ar,tremores,Possível ansiedade ou crise de pânico
-tontura,visao embacada,Possível alteração de pressão arterial
-dor de cabeca,visao embacada,Possível alteração de pressão arterial
-fraqueza,tontura,Possível alteração de pressão arterial
+palpitacoes,medo intenso,Possível ansiedade ou crise de pânico

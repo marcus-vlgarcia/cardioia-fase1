@@ -12,7 +12,7 @@ triagem; não realiza diagnóstico médico.
 | Critério do enunciado | Arquivo |
 | --- | --- |
 | 10 relatos completos de sintomas | [relatos_sintomas.txt](data/relatos_sintomas.txt) |
-| Mapa de conhecimento | [mapa_conhecimento.csv](data/mapa_conhecimento.csv) — 43 associações possíveis |
+| Mapa de conhecimento | [mapa_conhecimento.csv](data/mapa_conhecimento.csv) — 83 associações possíveis |
 | Código de extração funcional | [extrair_sintomas.py](src/extrair_sintomas.py) |
 | Base de frases e rótulos | [frases_risco.csv](data/frases_risco.csv) — 80 frases, 40 por classe |
 | Notebook com TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](notebooks/classificador_risco.ipynb) |

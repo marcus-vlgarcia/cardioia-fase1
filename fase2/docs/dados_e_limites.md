@@ -7,14 +7,17 @@ para esta simulação acadêmica. Não são prontuários, downloads de relatos r
 ou registros de atendimento. Os textos institucionais da Fase 1 continuam
 preservados, mas não foram transformados em exemplos rotulados de pacientes.
 
-O mapa contém 43 pares de expressões e oito categorias de possíveis condições.
-Ele registra combinações distintas que podem apontar para mais de uma hipótese,
-como dor no peito relacionada a síndromes coronarianas, angina, refluxo ou causas
-inflamatórias. É uma tabela de associações didáticas, não uma ontologia clínica
-formal. A ocorrência de um par não confirma a condição, e a ausência de
-correspondência não exclui doença. Os 10 relatos incluem início, sintomas e
-impacto na rotina. A opção interativa cria um décimo primeiro relato temporário
-na saída, a partir de três respostas curtas, sem alterar os dez exemplos.
+O mapa contém 83 pares de expressões e 14 grupos de possíveis condições. Ele
+registra combinações distintas que podem apontar para mais de uma hipótese, como
+dor no peito relacionada a síndrome coronariana, angina, pericardite, miocardite,
+dissecção de aorta, refluxo ou dor musculoesquelética. Inclui ainda insuficiência
+cardíaca, arritmias, valvulopatias, cardiomiopatia por estresse, alterações de
+pressão arterial, tromboembolismo pulmonar e ansiedade. É uma tabela de
+associações didáticas, não uma ontologia clínica formal ou uma lista exaustiva.
+A ocorrência de um par não confirma a condição, e a ausência de correspondência
+não exclui doença. Os 10 relatos incluem início, sintomas e impacto na rotina.
+A opção interativa cria um décimo primeiro relato temporário na saída, a partir
+de três respostas curtas, sem alterar os dez exemplos.
 
 ## Critérios dos rótulos
 
@@ -59,6 +62,10 @@ não validam o mapa nem os rótulos produzidos para o exercício.
 - Insuficiência cardíaca: [Ministério da Saúde — orientações ao paciente](https://linhasdecuidado.saude.gov.br/portal/insuficiencia-cardiaca-%28IC%29-no-adulto/sou-paciente).
 - Angina: [Biblioteca Virtual em Saúde — Angina](https://bvsms.saude.gov.br/angina/).
 - Arritmias: [Secretaria da Saúde do Ceará — sintomas e cuidados](https://www.ce.gov.br/saude/2019/11/06/arritmia-cardiaca-conheca-mais-sobre-a-doenca-e-saiba-como-trata-la-corretamente/).
+- Dor torácica, pericardite e dissecção de aorta: [Linha de Cuidado — avaliação e conduta](https://linhasdecuidado.saude.gov.br/portal/dor-toracica/unidade-hospitalar/avaliacao-conduta/).
+- Valvulopatias: [Secretaria de Saúde de Alagoas — estenose aórtica](https://www.saude.al.gov.br/medico-do-hospital-do-coracao-alagoano-alerta-para-sintomas-da-estenose-aortica/).
+- Cardiomiopatia por estresse: [Biblioteca Virtual em Saúde — síndrome do coração partido](https://bvsms.saude.gov.br/sindrome-do-coracao-partido/).
+- Tromboembolismo pulmonar: [Ministério da Saúde — trombose](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/t/trombose).
 - Método: [Scikit-learn — prevenção de vazamento de dados](https://scikit-learn.org/stable/common_pitfalls.html).
 
 A base numérica e os ECGs da Fase 1 permanecem disponíveis para continuidade
