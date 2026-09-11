@@ -40,7 +40,10 @@ usar outros arquivos com `--frases`, `--mapa` e `--saida`. Para demonstrar um
 novo relato, execute `python fase2/src/extrair_sintomas.py --interativo`: três
 campos pedem sintomas, impacto na rotina e tempo de início. O programa formula
 a frase no padrão dos relatos e acrescenta sua análise ao CSV de saída, sem
-alterar o arquivo original com os dez exemplos. O segundo executa
+alterar o arquivo original com os dez exemplos. Cada relato enviado também é
+guardado, junto com sintomas e possíveis associações, em
+`fase2/outputs/relatos_interativos.csv`. Esse histórico fica apenas na máquina
+que executou o programa e não é enviado ao GitHub. O segundo executa
 todas as células e salva o notebook com tabelas e gráficos, além dos arquivos
 em `outputs`. Também é possível abrir o notebook no VS Code ou Jupyter usando
 o mesmo ambiente e executar todas as células em ordem.
