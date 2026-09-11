@@ -1,0 +1,17 @@
+frase,situacao,grupo,palavras,conjunto,predicao,acerto
+Sinto dor intensa no peito que não passa há meia hora.,alto risco,A07,11,regressao,alto risco,True
+Uma dor forte no tórax continua mesmo após parar tudo.,alto risco,A07,10,regressao,alto risco,True
+Estou com lábios arroxeados e dificuldade para respirar.,alto risco,A08,8,regressao,baixo risco,False
+Minha boca ficou roxa enquanto eu tentava puxar o ar.,alto risco,A08,10,regressao,alto risco,True
+Uma dor súbita muito forte atravessa o peito e as costas.,alto risco,A11,11,regressao,alto risco,True
+Surgiu uma dor intensa no tórax que se espalhou pelas costas.,alto risco,A11,11,regressao,alto risco,True
+A pressão no peito piora e estou quase apagando.,alto risco,A15,9,regressao,alto risco,True
+Sinto aperto crescente no tórax e sensação de desmaio.,alto risco,A15,9,regressao,alto risco,True
+Senti cansaço leve após correr e já passou com descanso.,baixo risco,B01,10,regressao,baixo risco,True
+Fiquei cansado depois do exercício mas me recuperei por completo.,baixo risco,B01,10,regressao,baixo risco,True
+Meu ombro está levemente dolorido após carregar caixas e está melhorando.,baixo risco,B02,11,regressao,baixo risco,True
+Depois da mudança fiquei com incômodo no ombro que diminui a cada dia.,baixo risco,B02,13,regressao,baixo risco,True
+Meu olho coça levemente depois de ficar em ambiente com poeira.,baixo risco,B12,11,regressao,baixo risco,True
+Fiquei com irritação discreta no olho após limpar a estante.,baixo risco,B12,10,regressao,baixo risco,True
+Sinto leve desconforto na lombar após ficar sentado e melhora ao mudar de posição.,baixo risco,B18,14,regressao,baixo risco,True
+Minhas costas incomodaram um pouco na cadeira e melhoraram após levantar.,baixo risco,B18,11,regressao,baixo risco,True

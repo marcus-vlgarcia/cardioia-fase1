@@ -1,62 +1,90 @@
 {
   "seed": 42,
-  "n_treino": 64,
-  "n_teste": 16,
-  "grupos_treino": 32,
-  "grupos_teste": 8,
+  "n_treino": 184,
+  "n_teste": 40,
+  "grupos_treino": 92,
+  "grupos_teste": 20,
   "baseline_acuracia": 0.5,
   "relatorio": {
     "baixo risco": {
-      "precision": 0.875,
-      "recall": 0.875,
-      "f1-score": 0.875,
-      "support": 8.0
+      "precision": 0.8095238095238095,
+      "recall": 0.85,
+      "f1-score": 0.8292682926829268,
+      "support": 20.0
     },
     "alto risco": {
-      "precision": 0.875,
-      "recall": 0.875,
-      "f1-score": 0.875,
-      "support": 8.0
+      "precision": 0.8421052631578947,
+      "recall": 0.8,
+      "f1-score": 0.8205128205128205,
+      "support": 20.0
     },
-    "accuracy": 0.875,
+    "accuracy": 0.825,
     "macro avg": {
-      "precision": 0.875,
-      "recall": 0.875,
-      "f1-score": 0.875,
-      "support": 16.0
+      "precision": 0.8258145363408521,
+      "recall": 0.825,
+      "f1-score": 0.8248905565978737,
+      "support": 40.0
     },
     "weighted avg": {
-      "precision": 0.875,
-      "recall": 0.875,
-      "f1-score": 0.875,
-      "support": 16.0
+      "precision": 0.825814536340852,
+      "recall": 0.825,
+      "f1-score": 0.8248905565978737,
+      "support": 40.0
     }
   },
   "matriz_confusao": [
     [
-      7,
-      1
+      17,
+      3
     ],
     [
-      1,
-      7
+      4,
+      16
     ]
   ],
   "cv_acuracia": [
-    0.8125,
-    0.875,
-    0.6875,
-    0.9375
+    0.8913043478260869,
+    0.9130434782608695,
+    1.0,
+    0.8695652173913043
   ],
   "cv_f1_macro": [
-    0.8117647058823529,
-    0.873015873015873,
-    0.6862745098039216,
-    0.9372549019607843
+    0.8912529550827423,
+    0.9128787878787878,
+    1.0,
+    0.8695652173913043
   ],
-  "sha256_dataset": "5c2b7ff38ff68362da35649fa8bc3a0a49bed835a47c7d6961babe27259ab672",
+  "sha256_dataset": "648fbed5dd537b3d8219b7ea1189444f6cc12091ca7fca2ef1e5731fe3363ce5",
   "python": "3.13.2",
   "sklearn": "1.9.0",
   "numpy": "2.5.3",
-  "pandas": "3.0.5"
+  "pandas": "3.0.5",
+  "n_regressao": 16,
+  "melhores_parametros": {
+    "classificador__C": 4.0,
+    "tfidf__ngram_range": [
+      1,
+      2
+    ]
+  },
+  "comparacao_mesmo_teste": [
+    {
+      "modelo": "original_64_treino",
+      "acuracia": 0.7,
+      "recall_alto_risco": 0.75,
+      "f1_macro": 0.6992481203007519,
+      "falsos_negativos": 5,
+      "falsos_positivos": 7
+    },
+    {
+      "modelo": "revisado_184_treino",
+      "acuracia": 0.825,
+      "recall_alto_risco": 0.8,
+      "f1_macro": 0.8248905565978737,
+      "falsos_negativos": 4,
+      "falsos_positivos": 3
+    }
+  ],
+  "regressao_acuracia": 0.9375,
+  "sha256_particoes": "8da00faafdc56b356e89e9106995d781591b1dff82b9cf754e14f5037cf9b8fa"
 }

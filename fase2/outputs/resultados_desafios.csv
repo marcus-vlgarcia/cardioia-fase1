@@ -1,13 +1,13 @@
 frase,esperado,objetivo,predicao,acerto
 Estou com pressão no peito e suor gelado desde agora.,alto risco,sinônimo,alto risco,True
 Meu peito não dói mas não consigo respirar mesmo parado.,alto risco,negação com contraste,alto risco,True
-Não tenho falta de ar nem dor no peito; só espirrei duas vezes.,baixo risco,negação,alto risco,False
+Não tenho falta de ar nem dor no peito; só espirrei duas vezes.,baixo risco,negação,baixo risco,True
 Não estou com suor frio mas sinto dor no peito intensa.,alto risco,negação com contraste,alto risco,True
 Só sinto leve cansaço depois da caminhada e já passou.,baixo risco,recuperação,baixo risco,True
 A dor no peito é leve mas começou agora junto de suor frio.,alto risco,leve não exclui alerta,alto risco,True
 Tenho tontura intensa e meu coração está disparado.,alto risco,sinônimo,alto risco,True
 Minha garganta arranha um pouco e respiro normalmente.,baixo risco,queixa leve,baixo risco,True
 Meu tornozelo inchou e estou sem ar até quando descanso.,alto risco,combinação,alto risco,True
-Estou com coriza leve e não sinto dor no peito.,baixo risco,negação ao final,alto risco,False
+Estou com coriza leve e não sinto dor no peito.,baixo risco,negação ao final,baixo risco,True
 Sinto dor no peito e suor frio mas a dor diminuiu um pouco.,alto risco,alívio parcial,alto risco,True
 Meu braço coça um pouco depois de uma picada de mosquito.,baixo risco,queixa leve,baixo risco,True

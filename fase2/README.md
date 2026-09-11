@@ -14,7 +14,8 @@ triagem; não realiza diagnóstico médico.
 | 10 relatos completos de sintomas | [relatos_sintomas.txt](data/relatos_sintomas.txt) |
 | Mapa de conhecimento | [mapa_conhecimento.csv](data/mapa_conhecimento.csv) — 83 associações possíveis |
 | Código de extração funcional | [extrair_sintomas.py](src/extrair_sintomas.py) |
-| Base de frases e rótulos | [frases_risco.csv](data/frases_risco.csv) — 80 frases, 40 por classe |
+| Base de frases e rótulos | [frases_risco.csv](data/frases_risco.csv) — 240 frases, 120 por classe |
+| Partições fixas por cenário | [particoes.csv](data/particoes.csv) — treino, teste novo e regressão |
 | Notebook com TF-IDF, treinamento e avaliação | [classificador_risco.ipynb](notebooks/classificador_risco.ipynb) |
 | Resultados da extração | [diagnosticos_sugeridos.csv](outputs/diagnosticos_sugeridos.csv) |
 | Avaliação do modelo | [metricas.json](outputs/metricas.json) e [predicoes_teste.csv](outputs/predicoes_teste.csv) |
@@ -52,14 +53,16 @@ compatível, retorna “Associação insuficiente no mapa”. O mapa foi ampliad
 registrar mais de uma possibilidade para sintomas parecidos. Um relato pode
 receber mais de uma associação; nenhuma delas é um diagnóstico confirmado.
 
-O classificador usa 64 frases de treino e 16 de teste, separadas por cenário com
-seed 42. As paráfrases de cada cenário ficam juntas. O TF-IDF é ajustado apenas
-no treino, dentro de um Pipeline. A validação cruzada usa quatro divisões por
-grupo no treino, sem reutilizar o teste para selecionar parâmetros.
+O classificador usa 184 frases de treino, 40 de teste novo e 16 do teste antigo
+para regressão. As partições são fixadas por cenário e as paráfrases ficam juntas.
+O TF-IDF é ajustado apenas no treino. A validação cruzada tem quatro divisões por
+grupo, seed 42, e escolhe entre quatro configurações pelo F1 macro. No mesmo
+teste novo, a versão anterior acertou 70% e a revisada 82,5%, com recall de alto
+risco de 80%. A comparação e os erros estão em [avaliacao.md](docs/avaliacao.md).
 
 O notebook apresenta acurácia, precisão, recall e F1 por classe, matriz de
 confusão, baseline e erros individuais. Também inspeciona termos aprendidos e
-testa 12 frases adicionais. Todos os rótulos são simulados. A análise detalhada
+testa os 12 desafios antigos como regressão. Todos os rótulos são simulados. A análise detalhada
 de limitações inclui vieses lexicais e a falta de representatividade demográfica.
 
 ## Continuidade da Fase 1
