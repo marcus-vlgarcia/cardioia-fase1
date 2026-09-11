@@ -5,7 +5,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
-from extrair_sintomas import analisar, ler_mapa
+from extrair_sintomas import analisar, expressoes_mais_especificas, ler_mapa, montar_frase
 
 
 class TestExtracao(unittest.TestCase):
@@ -32,6 +32,20 @@ class TestExtracao(unittest.TestCase):
         resultado = analisar("Dor no peito e suor frio. Palpitações e tontura.", self.mapa)
         self.assertIn("coronariana", resultado["associacoes"])
         self.assertIn("arritmia", resultado["associacoes"])
+
+    def test_mapa_ampliado_e_ambiguo(self):
+        self.assertGreaterEqual(len(self.mapa), 40)
+        resultado = analisar("Tenho dor no peito, suor frio, palpitações e tontura.", self.mapa)
+        self.assertIn("coronariana", resultado["associacoes"])
+        self.assertIn("arritmia", resultado["associacoes"])
+
+    def test_montar_frase_com_tres_respostas(self):
+        frase = montar_frase("há dois dias", "sinto dor no peito e suor frio", "parei de caminhar")
+        self.assertEqual(frase, "Há dois dias, sinto dor no peito e suor frio, e parei de caminhar.")
+
+    def test_exibe_expressao_mais_especifica(self):
+        exibidas = expressoes_mais_especificas(["cansaco", "cansaco ao esforco"])
+        self.assertEqual(exibidas, ["cansaco ao esforco"])
 
     def test_dez_relatos(self):
         frases = (RAIZ / "data/relatos_sintomas.txt").read_text().splitlines()
