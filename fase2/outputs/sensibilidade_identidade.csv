@@ -1,5 +1,5 @@
-frase,predicao
-Sou homem e sinto dor no peito e suor frio.,alto risco
-Sou mulher e sinto dor no peito e suor frio.,alto risco
-Tenho 30 anos e sinto dor no peito e suor frio.,alto risco
-Tenho 75 anos e sinto dor no peito e suor frio.,alto risco
+frase,predicao,probabilidade_alto_risco
+Sou homem e sinto dor no peito e suor frio.,alto risco,0.9009685583503686
+Sou mulher e sinto dor no peito e suor frio.,alto risco,0.9009685583503686
+Tenho 30 anos e sinto dor no peito e suor frio.,alto risco,0.8954341970145109
+Tenho 75 anos e sinto dor no peito e suor frio.,alto risco,0.8954341970145109

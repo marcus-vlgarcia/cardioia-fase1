@@ -239,3 +239,51 @@ frase,situacao,grupo
 "Assoar muito irritou a pele do nariz mas agora está melhor e estou bem.",baixo risco,B59
 "Sem dor no peito ou enjoo; só estou com uma mancha de tinta na mão que não causa incômodo.",baixo risco,B60
 "Não sinto pressão torácica nem náuseas e a única coisa diferente é tinta na pele sem irritação.",baixo risco,B60
+"Não tenho febre nem tosse, mas a falta de ar não deixa eu terminar uma frase.",alto risco,A61
+"Sem febre ou tosse, estou tão sem fôlego que preciso parar enquanto falo.",alto risco,A61
+"Comecei a tossir uma espuma rosada e está muito difícil puxar o ar.",alto risco,A62
+"A tosse trouxe secreção espumosa rosada e fiquei com falta de ar intensa.",alto risco,A62
+"Meus lábios ficaram azulados e estou cansando para respirar mesmo parado.",alto risco,A63
+"A boca ficou roxa e não consigo recuperar o fôlego em repouso.",alto risco,A63
+"Não há dor no peito, mas a respiração piorou de repente e estou confuso.",alto risco,A64
+"Meu tórax não dói; mesmo assim fiquei subitamente sem ar e desorientado.",alto risco,A64
+"A dor parece pequena, porém estou suando frio e quase desmaiando.",alto risco,A65
+"O desconforto é leve, mas veio junto de transpiração gelada e sensação de apagar.",alto risco,A65
+"Meu coração falhou por instantes e em seguida perdi a consciência.",alto risco,A66
+"Senti batimentos irregulares, escureceu tudo e acordei no chão.",alto risco,A66
+"Sem febre, a respiração ficou curta de repente e estou suando frio sem parar.",alto risco,A67
+"Não estou gripado; comecei a ficar sem ar subitamente e a roupa encharcou de suor frio.",alto risco,A67
+"Fui dormir bem, acordei com pressão forte no peito e não consigo voltar a respirar deitado.",alto risco,A68
+"Durante a madrugada surgiu aperto intenso no tórax e preciso sentar para puxar o ar.",alto risco,A68
+"A dor no tórax se espalhou para o braço e fiquei muito pálido, mesmo sem enjoo.",alto risco,A69
+"Não sinto náusea, mas a pressão persistente no peito chegou ao braço e tirou minha cor.",alto risco,A69
+"De repente perdi a força de um braço e minhas palavras saem embaralhadas.",alto risco,A70
+"Meu braço enfraqueceu do nada e não consigo formar frases como antes.",alto risco,A70
+"O coração dispara com tontura forte e a sensação de que vou cair aumentou.",alto risco,A71
+"As batidas ficaram muito rápidas, comecei a rodar e precisei me apoiar para não apagar.",alto risco,A71
+"Comecei a ficar sem ar de uma vez e agora cada respiração traz uma dor intensa no peito.",alto risco,A72
+"Uma falta de ar súbita veio acompanhada de dor no tórax ao inspirar.",alto risco,A72
+"Não sinto dor no peito ou falta de ar; a roupa nova só deixou a nuca irritada.",baixo risco,B61
+"Meu tórax não aperta e respiro normalmente; a etiqueta da blusa apenas arranhou meu pescoço.",baixo risco,B61
+"Ouvi meu avô falar de suor frio, mas comigo só aconteceu uma coceira leve no braço.",baixo risco,B62
+"A transpiração gelada foi de outra pessoa; eu estou bem e tenho apenas irritação pequena na pele.",baixo risco,B62
+"Depois de correr, fiquei ofegante e suei, mas tudo passou em poucos minutos e estou bem.",baixo risco,B63
+"O exercício acelerou minha respiração e trouxe suor, porém recuperei o fôlego completamente ao parar.",baixo risco,B63
+"Não tenho palpitações nem aperto no peito; só uma bolha pequena no calcanhar.",baixo risco,B64
+"O coração está normal e não dói o tórax; a única queixa é uma bolha do sapato no pé.",baixo risco,B64
+"Não sinto falta de ar, apenas pigarro depois de uma apresentação longa.",baixo risco,B65
+"Falei bastante e a garganta pediu pigarro, mas continuo respirando normalmente.",baixo risco,B65
+"To bem, sem aperto no peito e sem suor frio; so a pele da mao ta ressecada.",baixo risco,B66
+"Nao to sem ar nem tonto, so fiquei com a boca seca depois de falar muito.",baixo risco,B66
+"Não estou com dor no peito nem suor frio; apenas um calo antigo incomoda no sapato.",baixo risco,B67
+"Meu tórax não dói e não transpiro gelado; só o calçado apertou um pouco o calcanhar.",baixo risco,B67
+"Minha irmã disse estar sem ar, mas eu só tenho uma pequena irritação na pele do cotovelo.",baixo risco,B68
+"A falta de ar é da minha irmã; comigo há apenas uma mancha seca que coça pouco.",baixo risco,B68
+"Suei bastante na academia, parei, bebi água e agora estou sem dor ou tontura.",baixo risco,B69
+"O suor veio do treino e já passou; meu coração está calmo e me sinto normal.",baixo risco,B69
+"Não sinto pressão no peito, só um incômodo leve no pulso depois de digitar.",baixo risco,B70
+"Meu tórax está bem; o teclado deixou apenas o punho um pouco cansado.",baixo risco,B70
+"Não tenho falta de ar nem palpitações; uma picada pequena deixou meu braço coçando.",baixo risco,B71
+"Respiro bem e o coração não acelerou, só estou com coceira onde um inseto picou.",baixo risco,B71
+"Não estou tonto ou quase desmaiando, apenas com rouquidão após cantar.",baixo risco,B72
+"A voz ficou cansada depois da música, mas não tive tontura nem sensação de apagar.",baixo risco,B72

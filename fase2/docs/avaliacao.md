@@ -1,75 +1,81 @@
 # Avaliação do classificador
 
-## Base e método da revisão
+## Base e separação dos conjuntos
 
-A base passou de 80 para 240 frases, em 120 cenários com duas paráfrases:
-184 frases de treino, 40 de teste novo e 16 do teste antigo para regressão.
-O manifesto mantém as paráfrases juntas em todas as divisões.
+A base contém 288 frases simuladas, organizadas em 144 cenários com duas
+paráfrases. São 208 frases de treino, 24 de teste final e 56 de regressão. As
+duas frases do mesmo cenário ficam sempre no mesmo conjunto.
 
-Comparamos quatro configurações apenas na validação cruzada do treino: TF-IDF
-com n-gramas (1,2) ou (1,3) e Regressão Logística com C=1 ou C=4. O maior F1 macro
-selecionou bigramas e C=4. Com seed 42, as acurácias das quatro divisões foram
-89,13%, 91,30%, 100% e 86,96% (média 91,85%). Esses valores participaram da
-seleção e podem ser otimistas; não substituem o teste reservado.
+Os testes analisados nas versões anteriores foram preservados como regressão:
+os grupos A51–A60, B51–B60 e os oito grupos do teste inicial. Eles não entram
+no treino, mas seus resultados não são evidência independente porque seus erros
+já orientaram a revisão. O teste final é formado pelos grupos A67–A72 e B67–B72.
 
-## Comparação no mesmo teste novo
+## Configuração e limiar escolhidos no treino
 
-Reproduzimos a configuração anterior nos mesmos 64 exemplos originais de treino
-e avaliamos as duas versões nas mesmas 40 frases novas.
+O classificador usa TF-IDF e Regressão Logística. Antes de consultar o teste
+final, a validação cruzada por cenário comparou quatro configurações: n-gramas
+(1,2) ou (1,3), com C=1 ou C=4. A seleção por F1 macro escolheu bigramas e C=4.
+As acurácias das quatro divisões foram 96,15%, 92,31%, 96,15% e 92,31%, com média
+de 94,23%. Esses valores ajudam a escolher o modelo, mas podem ser otimistas.
 
-| Medida | Original: 64 frases de treino | Revisado: 184 frases de treino |
-| --- | ---: | ---: |
-| Acurácia | 70% (28/40) | 82,5% (33/40) |
-| Recall de alto risco | 75% | 80% |
-| F1 macro | 0,699 | 0,825 |
-| Falsos negativos | 5 | 4 |
-| Falsos positivos | 7 | 3 |
+Também marcamos cinco negações comuns antes da vetorização, como “não sinto dor
+no peito” e “sem falta de ar”. O procedimento é limitado: não compreende toda a
+estrutura da frase, ironia, dupla negação ou relato indireto complexo.
 
-O baseline que sempre prevê a classe mais frequente acertou 50%. Na revisão,
-a precisão de alto risco foi 84,21% e o F1 dessa classe foi 0,821. A matriz tem
-17 acertos de baixo risco, três falsos positivos, quatro falsos negativos e
-16 acertos de alto risco.
+O limiar de decisão foi escolhido por previsões fora da divisão no treino:
 
-Houve melhora nesse conjunto. Tanto os dados quanto a regularização mudaram;
-a comparação não isola o efeito da quantidade de frases. O teste tem apenas
-20 cenários e a mesma origem sintética do treino. Um erro representa 2,5 pontos
-percentuais. As métricas não validam uso em pacientes.
+| Limiar para alto risco | Precisão alto risco | Recall alto risco | Falsos negativos | Falsos positivos |
+| ---: | ---: | ---: | ---: | ---: |
+| 0,35 | 77,61% | 100% | 0 | 30 |
+| 0,40 | 81,60% | 98,08% | 2 | 23 |
+| 0,45 | 87,18% | 98,08% | 2 | 15 |
+| 0,50 | 91,82% | 97,12% | 3 | 9 |
 
-## Erros que permanecem
+Para esta simulação de triagem, foi selecionado 0,35: é o menor limiar com
+precisão de alto risco acima de 75% e o maior recall. Isso privilegia evitar
+falsos negativos e, como consequência, pode aumentar falsos positivos.
 
-Os quatro falsos negativos do teste novo foram:
+## Resultado no teste final
 
-- A53: negação de dor nas costas seguida de dificuldade respiratória e sonolência.
-- A57: duas paráfrases que negam febre e tosse, mas afirmam falta de ar que impede falar.
-- A58: dificuldade para respirar com espuma rosada na tosse, em uma das paráfrases.
+| Medida | Resultado |
+| --- | ---: |
+| Acurácia | 91,7% (22/24) |
+| Baseline | 50% |
+| Precisão de alto risco | 85,7% |
+| Recall de alto risco | 100% |
+| F1 de alto risco | 0,923 |
+| Falsos negativos | 0 |
+| Falsos positivos | 2 |
 
-Os três falsos positivos foram as duas frases B54, que negam sintomas torácicos
-e relatam irritação da etiqueta na nuca, e uma frase B55 sobre uma marca de meia
-que desapareceu. A classificação ainda depende de vocabulário e não compreende
-com segurança o alcance das negações.
+A matriz de confusão tem 10 acertos de baixo risco, dois falsos positivos,
+nenhum falso negativo e 12 acertos de alto risco. Os dois falsos positivos são
+as paráfrases do cenário B69: suor após exercício que cessou com descanso. O
+modelo deu maior peso ao termo “suor” do que ao contexto de recuperação.
 
-## Regressão e histórico
+O resultado é promissor para o exercício, mas o teste tem somente 12 cenários e
+cada erro altera a acurácia em 4,17 pontos percentuais. Todos os exemplos são
+sintéticos e produzidos no mesmo projeto. A métrica não representa desempenho
+clínico nem valida uso em atendimento.
 
-A versão original acertou 14/16 (87,5%) no teste antigo e 10/12 desafios. A revisão
-acertou 15/16 (93,75%) no teste antigo e 12/12 desafios. As duas negações que
-falhavam nos desafios passaram. A frase sobre lábios arroxeados e dificuldade
-para respirar continua sendo um falso negativo no teste antigo.
+## Regressão e desafios
 
-Os erros conhecidos motivaram a ampliação, então esses conjuntos são regressão,
-não nova avaliação independente. Os 87,5% antigos e os 82,5% atuais foram medidos
-em testes diferentes. A comparação entre versões é a tabela das mesmas 40 frases.
+O conjunto de regressão teve 48 acertos em 56 frases (85,7%). Os 12 desafios
+adicionais tiveram 12 acertos, inclusive os exemplos de negação que antes eram
+classificados como alto risco. A melhoria veio da ampliação de cenários e da
+marcação de negações; ela não elimina falhas em frases mais longas ou fora do
+vocabulário usado na base.
 
-## Governança e continuidade
+Os arquivos `predicoes_teste.csv`, `predicoes_regressao.csv` e
+`resultados_desafios.csv` guardam cada previsão. `comparacao_limiares.csv`
+mostra a escolha do limiar e `metricas.json` registra a seed, versões, hashes e
+métricas da execução.
 
-As métricas e hashes estão em `outputs/metricas.json`; as configurações avaliadas
-estão em `comparacao_cv.csv`; `comparacao_modelos.csv` compara as versões.
-`predicoes_teste.csv`, `predicoes_regressao.csv` e `resultados_desafios.csv`
-preservam os erros individuais. Os quatro exemplos de troca de identidade no
-notebook verificam sensibilidade textual, sem comprovar fairness demográfica.
+## Continuidade planejada
 
-Os rótulos são didáticos, as classes são artificialmente equilibradas e muitos
-casos leves têm vocabulário não cardíaco. As novas frases não tiveram revisão
-clínica independente. Mais exemplos da mesma autoria não substituem revisão
-dos rótulos, contextos diversos e dados externos. Se os erros do teste atual
-orientarem outra versão, ele também deverá ser tratado como regressão, com uma
-nova avaliação reservada ou externa.
+O teste final atual deve permanecer sem alterações enquanto esta versão existir.
+Se seus erros forem usados para treinar outra revisão, ele será apenas regressão
+e um novo conjunto reservado ou externo deverá ser criado. Para fases futuras,
+o grupo pretende buscar revisão clínica independente dos rótulos, diversidade
+de linguagem e dados, avaliação externa e critérios explícitos para o custo de
+falsos negativos e falsos positivos.

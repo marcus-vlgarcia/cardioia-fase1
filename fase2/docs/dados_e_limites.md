@@ -2,7 +2,7 @@
 
 ## Construção dos arquivos
 
-Os 10 relatos, as 240 frases rotuladas e os 12 casos de desafio foram escritos
+Os 10 relatos, as 288 frases rotuladas e os 12 casos de desafio foram escritos
 para esta simulação acadêmica. Não são prontuários, downloads de relatos reais
 ou registros de atendimento. Os textos institucionais da Fase 1 continuam
 preservados, mas não foram transformados em exemplos rotulados de pacientes.
@@ -39,13 +39,13 @@ de classes foi uma escolha de construção, não uma estimativa de prevalência.
 
 1. As duas frases de cada cenário são dependentes. Por isso, a divisão e a
    validação cruzada mantêm os grupos juntos.
-2. Há 120 cenários: 92 de treino, 20 de teste novo e oito de regressão. O teste
-   novo tem 40 frases; um erro altera a acurácia em 2,5 pontos percentuais.
+2. Há 144 cenários: 104 de treino, 12 de teste final e 28 de regressão. O teste
+   final tem 24 frases; um erro altera a acurácia em 4,17 pontos percentuais.
 3. Queixas não cardíacas leves predominam em parte da classe de baixo risco.
    O modelo pode aprender diferença de vocabulário em vez de gravidade.
-4. Palavras como “leve”, “forte” e “repouso” podem dominar decisões. Negação,
-   ironia, relatos de terceiros, erros ortográficos e sintomas atípicos não são
-   compreendidos de forma confiável pelo TF-IDF.
+4. O pré-processamento marca cinco negações frequentes, mas não resolve ironia,
+   dupla negação, relatos indiretos complexos, erros ortográficos ou sintomas
+   atípicos. Palavras como “leve”, “forte” e “repouso” ainda podem dominar decisões.
 5. O extrator trata apenas negação simples até pontuação ou contraste. Uma frase
    longa com negações e afirmações misturadas pode produzir erro. Ele exige os
    dois sintomas da linha e devolve todas as associações compatíveis.
@@ -55,23 +55,25 @@ de classes foi uma escolha de construção, não uma estimativa de prevalência.
 
 ## Ampliação da base textual
 
-A revisão preserva as 80 frases originais e acrescenta 160 em 80 novos cenários.
+A revisão preserva as 80 frases originais e acrescenta 208 em 104 novos cenários.
 Inclui negações, contraste com sinais de alerta, relatos de terceiros, escrita
-informal, recuperação após esforço e sintomas de intensidade diferente. As
-classes continuam balanceadas por construção (120 frases cada).
+informal, recuperação após esforço e sintomas de intensidade diferente. As classes
+continuam balanceadas por construção (144 frases cada).
 
-O manifesto `data/particoes.csv` foi fixado antes de executar a avaliação da
-revisão. Os grupos A51–A60 e B51–B60 formam o teste novo. Os oito grupos do teste
-anterior continuam fora do treino e são chamados de regressão, pois seus erros
-já eram conhecidos. Os 12 desafios também são regressão. A seleção automática
-de parâmetros usa apenas validação cruzada no treino. Não houve outra rodada
-de ajustes após consultar o teste novo.
+Os testes que já foram analisados, A51–A60, B51–B60 e os oito grupos do teste
+inicial, permanecem fora do treino como regressão. O manifesto `data/particoes.csv`
+fixa como teste final os grupos A67–A72 e B67–B72. A seleção de parâmetros e do
+limiar usa apenas previsões dentro do treino. Os 12 desafios também são regressão.
 
 As paráfrases são próximas e há temas e expressões semelhantes entre grupos.
 A autoria compartilhada e a escolha manual dos cenários limitam a independência
 da avaliação. Muitas queixas leves ainda não são cardíacas. Não há representação
 de prevalência ou revisão clínica independente. Nenhuma regra manual foi usada
 para corrigir os rótulos previstos pelo modelo.
+
+Se os erros do teste final atual orientarem uma próxima revisão, ele também deverá
+ser reclassificado como regressão. A próxima versão precisa de uma nova avaliação
+reservada ou externa, além de revisão clínica independente dos rótulos.
 
 Consulta complementar em 11/09/2026: [Ministério da Saúde — Infarto](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infarto)
 e [Scikit-learn — GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html).

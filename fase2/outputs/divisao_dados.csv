@@ -139,26 +139,26 @@ O enjoo apareceu junto com aperto no peito enquanto eu estava sentado lendo.,alt
 Em repouso comecei a sentir náuseas e uma pressão que continua no tórax.,alto risco,A49,treino
 Tenho diabetes; hoje veio um suor frio forte com falta de ar repentina.,alto risco,A50,treino
 Sou diabético e comecei subitamente a suar gelado e respirar com dificuldade.,alto risco,A50,treino
-Enquanto preparava café senti o tórax comprimido e quase caí de tanta fraqueza.,alto risco,A51,teste
-Na cozinha veio um aperto no peito com fraqueza que mal me deixa ficar em pé.,alto risco,A51,teste
-A pressão no peito já dura quarenta minutos e meu rosto está sem cor.,alto risco,A52,teste
-Estou muito pálido e o peso no tórax continua há quase uma hora.,alto risco,A52,teste
-Não sinto dor nas costas mas mal consigo respirar e estou ficando sonolento.,alto risco,A53,teste
-As costas não incomodam; a respiração está muito difícil e tenho dificuldade de me manter acordado.,alto risco,A53,teste
-Minha garganta arranha um pouco mas agora surgiu uma dor intensa no peito com suor gelado.,alto risco,A54,teste
-Além da rouquidão leve apareceu pressão torácica forte acompanhada de suor frio.,alto risco,A54,teste
-Meu coração começou a correr e senti o chão sumir antes de cair desacordado.,alto risco,A55,teste
-Após batidas rápidas no peito apaguei e acordei no chão.,alto risco,A55,teste
-Sentado no ônibus senti um peso no peito que alcançou o braço e não cedeu.,alto risco,A56,teste
-No trajeto começou uma pressão persistente no tórax irradiando para o braço.,alto risco,A56,teste
-Não tenho febre nem tosse mas a falta de ar é tanta que não termino uma frase.,alto risco,A57,teste
-Sem tosse ou febre; estou tão sem fôlego que preciso interromper a fala.,alto risco,A57,teste
-Tenho dificuldade para puxar o ar e estou com espuma rosada saindo na tosse.,alto risco,A58,teste
-A respiração ficou muito difícil e comecei a tossir uma secreção espumosa rosada.,alto risco,A58,teste
-Minha mão perdeu a força de repente e não consigo falar as palavras direito.,alto risco,A59,teste
-Surgiram de uma vez fraqueza no braço e dificuldade para articular a fala.,alto risco,A59,teste
-A dor no peito era pequena mas se intensificou e agora estou quase perdendo os sentidos.,alto risco,A60,teste
-O incômodo no tórax aumentou muito e veio uma sensação forte de desmaio.,alto risco,A60,teste
+Enquanto preparava café senti o tórax comprimido e quase caí de tanta fraqueza.,alto risco,A51,regressao
+Na cozinha veio um aperto no peito com fraqueza que mal me deixa ficar em pé.,alto risco,A51,regressao
+A pressão no peito já dura quarenta minutos e meu rosto está sem cor.,alto risco,A52,regressao
+Estou muito pálido e o peso no tórax continua há quase uma hora.,alto risco,A52,regressao
+Não sinto dor nas costas mas mal consigo respirar e estou ficando sonolento.,alto risco,A53,regressao
+As costas não incomodam; a respiração está muito difícil e tenho dificuldade de me manter acordado.,alto risco,A53,regressao
+Minha garganta arranha um pouco mas agora surgiu uma dor intensa no peito com suor gelado.,alto risco,A54,regressao
+Além da rouquidão leve apareceu pressão torácica forte acompanhada de suor frio.,alto risco,A54,regressao
+Meu coração começou a correr e senti o chão sumir antes de cair desacordado.,alto risco,A55,regressao
+Após batidas rápidas no peito apaguei e acordei no chão.,alto risco,A55,regressao
+Sentado no ônibus senti um peso no peito que alcançou o braço e não cedeu.,alto risco,A56,regressao
+No trajeto começou uma pressão persistente no tórax irradiando para o braço.,alto risco,A56,regressao
+Não tenho febre nem tosse mas a falta de ar é tanta que não termino uma frase.,alto risco,A57,regressao
+Sem tosse ou febre; estou tão sem fôlego que preciso interromper a fala.,alto risco,A57,regressao
+Tenho dificuldade para puxar o ar e estou com espuma rosada saindo na tosse.,alto risco,A58,regressao
+A respiração ficou muito difícil e comecei a tossir uma secreção espumosa rosada.,alto risco,A58,regressao
+Minha mão perdeu a força de repente e não consigo falar as palavras direito.,alto risco,A59,regressao
+Surgiram de uma vez fraqueza no braço e dificuldade para articular a fala.,alto risco,A59,regressao
+A dor no peito era pequena mas se intensificou e agora estou quase perdendo os sentidos.,alto risco,A60,regressao
+O incômodo no tórax aumentou muito e veio uma sensação forte de desmaio.,alto risco,A60,regressao
 Não tenho dor no peito; só uma unha quebrada incomodando ao tocar.,baixo risco,B21,treino
 Meu tórax não dói e a única queixa é a sensibilidade de uma unha lascada.,baixo risco,B21,treino
 Não estou com falta de ar nem palpitações; apenas o nariz coça um pouco.,baixo risco,B22,treino
@@ -219,23 +219,71 @@ Hoje só percebi uma descamação pequena no cotovelo; não há dor ou outros si
 A pele do cotovelo está descascando um pouco e de resto me sinto normal.,baixo risco,B49,treino
 Estou bem e sem dor no peito; minha dúvida era sobre uma marca antiga na pele que não mudou.,baixo risco,B50,treino
 Não tenho sintomas novos; a marca na pele continua igual e não sinto aperto no tórax.,baixo risco,B50,treino
-Depois de usar luvas fiquei com uma pequena marca no pulso que já está desaparecendo.,baixo risco,B51,teste
-A luva apertou um pouco e deixou o punho marcado mas está voltando ao normal.,baixo risco,B51,teste
-Não sinto dor no peito ou desmaio; minha queixa é só a pele do nariz ressecada.,baixo risco,B52,teste
-O nariz está ressecado por fora; não tenho aperto torácico nem sensação de apagar.,baixo risco,B52,teste
-Fiquei com a voz cansada depois da reunião e melhorei com água sem falta de ar.,baixo risco,B53,teste
-Falar na reunião ressecou a garganta mas água ajudou e continuo respirando bem.,baixo risco,B53,teste
-Meu peito não aperta e não estou suando frio; apenas a etiqueta da roupa arranha a nuca.,baixo risco,B54,teste
-A nuca ficou irritada pela etiqueta sem pressão no tórax ou suor gelado.,baixo risco,B54,teste
-A perna ficou marcada pela meia mas a marca sumiu e não tenho dor ou inchaço.,baixo risco,B55,teste
-Tirei a meia e a marca desapareceu; minhas pernas estão normais e sem desconforto.,baixo risco,B55,teste
-Não tenho palpitações nem falta de ar; sinto somente coceira discreta na orelha.,baixo risco,B56,teste
-Minha orelha coça um pouco mas o coração não dispara e respiro sem esforço.,baixo risco,B56,teste
-Depois de caminhar na areia apareceu uma bolha pequena no calcanhar e nada mais.,baixo risco,B57,teste
-A caminhada deixou apenas uma pequena bolha superficial no pé; estou me sentindo bem.,baixo risco,B57,teste
-Meu irmão relatou suor frio; comigo só aconteceu uma coceira passageira no pescoço.,baixo risco,B58,teste
-A transpiração gelada foi do meu irmão; minha queixa é uma coceira que já passou.,baixo risco,B58,teste
-A irritação na ponta do nariz melhorou com a pausa no uso do lenço e não tenho outros sintomas.,baixo risco,B59,teste
-Assoar muito irritou a pele do nariz mas agora está melhor e estou bem.,baixo risco,B59,teste
-Sem dor no peito ou enjoo; só estou com uma mancha de tinta na mão que não causa incômodo.,baixo risco,B60,teste
-Não sinto pressão torácica nem náuseas e a única coisa diferente é tinta na pele sem irritação.,baixo risco,B60,teste
+Depois de usar luvas fiquei com uma pequena marca no pulso que já está desaparecendo.,baixo risco,B51,regressao
+A luva apertou um pouco e deixou o punho marcado mas está voltando ao normal.,baixo risco,B51,regressao
+Não sinto dor no peito ou desmaio; minha queixa é só a pele do nariz ressecada.,baixo risco,B52,regressao
+O nariz está ressecado por fora; não tenho aperto torácico nem sensação de apagar.,baixo risco,B52,regressao
+Fiquei com a voz cansada depois da reunião e melhorei com água sem falta de ar.,baixo risco,B53,regressao
+Falar na reunião ressecou a garganta mas água ajudou e continuo respirando bem.,baixo risco,B53,regressao
+Meu peito não aperta e não estou suando frio; apenas a etiqueta da roupa arranha a nuca.,baixo risco,B54,regressao
+A nuca ficou irritada pela etiqueta sem pressão no tórax ou suor gelado.,baixo risco,B54,regressao
+A perna ficou marcada pela meia mas a marca sumiu e não tenho dor ou inchaço.,baixo risco,B55,regressao
+Tirei a meia e a marca desapareceu; minhas pernas estão normais e sem desconforto.,baixo risco,B55,regressao
+Não tenho palpitações nem falta de ar; sinto somente coceira discreta na orelha.,baixo risco,B56,regressao
+Minha orelha coça um pouco mas o coração não dispara e respiro sem esforço.,baixo risco,B56,regressao
+Depois de caminhar na areia apareceu uma bolha pequena no calcanhar e nada mais.,baixo risco,B57,regressao
+A caminhada deixou apenas uma pequena bolha superficial no pé; estou me sentindo bem.,baixo risco,B57,regressao
+Meu irmão relatou suor frio; comigo só aconteceu uma coceira passageira no pescoço.,baixo risco,B58,regressao
+A transpiração gelada foi do meu irmão; minha queixa é uma coceira que já passou.,baixo risco,B58,regressao
+A irritação na ponta do nariz melhorou com a pausa no uso do lenço e não tenho outros sintomas.,baixo risco,B59,regressao
+Assoar muito irritou a pele do nariz mas agora está melhor e estou bem.,baixo risco,B59,regressao
+Sem dor no peito ou enjoo; só estou com uma mancha de tinta na mão que não causa incômodo.,baixo risco,B60,regressao
+Não sinto pressão torácica nem náuseas e a única coisa diferente é tinta na pele sem irritação.,baixo risco,B60,regressao
+"Não tenho febre nem tosse, mas a falta de ar não deixa eu terminar uma frase.",alto risco,A61,treino
+"Sem febre ou tosse, estou tão sem fôlego que preciso parar enquanto falo.",alto risco,A61,treino
+Comecei a tossir uma espuma rosada e está muito difícil puxar o ar.,alto risco,A62,treino
+A tosse trouxe secreção espumosa rosada e fiquei com falta de ar intensa.,alto risco,A62,treino
+Meus lábios ficaram azulados e estou cansando para respirar mesmo parado.,alto risco,A63,treino
+A boca ficou roxa e não consigo recuperar o fôlego em repouso.,alto risco,A63,treino
+"Não há dor no peito, mas a respiração piorou de repente e estou confuso.",alto risco,A64,treino
+Meu tórax não dói; mesmo assim fiquei subitamente sem ar e desorientado.,alto risco,A64,treino
+"A dor parece pequena, porém estou suando frio e quase desmaiando.",alto risco,A65,treino
+"O desconforto é leve, mas veio junto de transpiração gelada e sensação de apagar.",alto risco,A65,treino
+Meu coração falhou por instantes e em seguida perdi a consciência.,alto risco,A66,treino
+"Senti batimentos irregulares, escureceu tudo e acordei no chão.",alto risco,A66,treino
+"Sem febre, a respiração ficou curta de repente e estou suando frio sem parar.",alto risco,A67,teste
+Não estou gripado; comecei a ficar sem ar subitamente e a roupa encharcou de suor frio.,alto risco,A67,teste
+"Fui dormir bem, acordei com pressão forte no peito e não consigo voltar a respirar deitado.",alto risco,A68,teste
+Durante a madrugada surgiu aperto intenso no tórax e preciso sentar para puxar o ar.,alto risco,A68,teste
+"A dor no tórax se espalhou para o braço e fiquei muito pálido, mesmo sem enjoo.",alto risco,A69,teste
+"Não sinto náusea, mas a pressão persistente no peito chegou ao braço e tirou minha cor.",alto risco,A69,teste
+De repente perdi a força de um braço e minhas palavras saem embaralhadas.,alto risco,A70,teste
+Meu braço enfraqueceu do nada e não consigo formar frases como antes.,alto risco,A70,teste
+O coração dispara com tontura forte e a sensação de que vou cair aumentou.,alto risco,A71,teste
+"As batidas ficaram muito rápidas, comecei a rodar e precisei me apoiar para não apagar.",alto risco,A71,teste
+Comecei a ficar sem ar de uma vez e agora cada respiração traz uma dor intensa no peito.,alto risco,A72,teste
+Uma falta de ar súbita veio acompanhada de dor no tórax ao inspirar.,alto risco,A72,teste
+Não sinto dor no peito ou falta de ar; a roupa nova só deixou a nuca irritada.,baixo risco,B61,treino
+Meu tórax não aperta e respiro normalmente; a etiqueta da blusa apenas arranhou meu pescoço.,baixo risco,B61,treino
+"Ouvi meu avô falar de suor frio, mas comigo só aconteceu uma coceira leve no braço.",baixo risco,B62,treino
+A transpiração gelada foi de outra pessoa; eu estou bem e tenho apenas irritação pequena na pele.,baixo risco,B62,treino
+"Depois de correr, fiquei ofegante e suei, mas tudo passou em poucos minutos e estou bem.",baixo risco,B63,treino
+"O exercício acelerou minha respiração e trouxe suor, porém recuperei o fôlego completamente ao parar.",baixo risco,B63,treino
+Não tenho palpitações nem aperto no peito; só uma bolha pequena no calcanhar.,baixo risco,B64,treino
+O coração está normal e não dói o tórax; a única queixa é uma bolha do sapato no pé.,baixo risco,B64,treino
+"Não sinto falta de ar, apenas pigarro depois de uma apresentação longa.",baixo risco,B65,treino
+"Falei bastante e a garganta pediu pigarro, mas continuo respirando normalmente.",baixo risco,B65,treino
+"To bem, sem aperto no peito e sem suor frio; so a pele da mao ta ressecada.",baixo risco,B66,treino
+"Nao to sem ar nem tonto, so fiquei com a boca seca depois de falar muito.",baixo risco,B66,treino
+Não estou com dor no peito nem suor frio; apenas um calo antigo incomoda no sapato.,baixo risco,B67,teste
+Meu tórax não dói e não transpiro gelado; só o calçado apertou um pouco o calcanhar.,baixo risco,B67,teste
+"Minha irmã disse estar sem ar, mas eu só tenho uma pequena irritação na pele do cotovelo.",baixo risco,B68,teste
+A falta de ar é da minha irmã; comigo há apenas uma mancha seca que coça pouco.,baixo risco,B68,teste
+"Suei bastante na academia, parei, bebi água e agora estou sem dor ou tontura.",baixo risco,B69,teste
+O suor veio do treino e já passou; meu coração está calmo e me sinto normal.,baixo risco,B69,teste
+"Não sinto pressão no peito, só um incômodo leve no pulso depois de digitar.",baixo risco,B70,teste
+Meu tórax está bem; o teclado deixou apenas o punho um pouco cansado.,baixo risco,B70,teste
+Não tenho falta de ar nem palpitações; uma picada pequena deixou meu braço coçando.,baixo risco,B71,teste
+"Respiro bem e o coração não acelerou, só estou com coceira onde um inseto picou.",baixo risco,B71,teste
+"Não estou tonto ou quase desmaiando, apenas com rouquidão após cantar.",baixo risco,B72,teste
+"A voz ficou cansada depois da música, mas não tive tontura nem sensação de apagar.",baixo risco,B72,teste
