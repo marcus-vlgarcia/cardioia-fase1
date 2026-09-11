@@ -2,7 +2,7 @@
 
 ## Construção dos arquivos
 
-Os 10 relatos, as 80 frases rotuladas e os 12 casos de desafio foram escritos
+Os 10 relatos, as 240 frases rotuladas e os 12 casos de desafio foram escritos
 para esta simulação acadêmica. Não são prontuários, downloads de relatos reais
 ou registros de atendimento. Os textos institucionais da Fase 1 continuam
 preservados, mas não foram transformados em exemplos rotulados de pacientes.
@@ -39,8 +39,8 @@ de classes foi uma escolha de construção, não uma estimativa de prevalência.
 
 1. As duas frases de cada cenário são dependentes. Por isso, a divisão e a
    validação cruzada mantêm os grupos juntos.
-2. Há somente 40 cenários. O teste final tem oito cenários e 16 frases; um erro
-   altera a acurácia em 6,25 pontos percentuais.
+2. Há 120 cenários: 92 de treino, 20 de teste novo e oito de regressão. O teste
+   novo tem 40 frases; um erro altera a acurácia em 2,5 pontos percentuais.
 3. Queixas não cardíacas leves predominam em parte da classe de baixo risco.
    O modelo pode aprender diferença de vocabulário em vez de gravidade.
 4. Palavras como “leve”, “forte” e “repouso” podem dominar decisões. Negação,
@@ -53,7 +53,30 @@ de classes foi uma escolha de construção, não uma estimativa de prevalência.
    Trocar identidade mantendo sintomas é um teste de sensibilidade, não uma
    avaliação suficiente de fairness.
 
-## Fontes consultadas
+## Ampliação da base textual
+
+A revisão preserva as 80 frases originais e acrescenta 160 em 80 novos cenários.
+Inclui negações, contraste com sinais de alerta, relatos de terceiros, escrita
+informal, recuperação após esforço e sintomas de intensidade diferente. As
+classes continuam balanceadas por construção (120 frases cada).
+
+O manifesto `data/particoes.csv` foi fixado antes de executar a avaliação da
+revisão. Os grupos A51–A60 e B51–B60 formam o teste novo. Os oito grupos do teste
+anterior continuam fora do treino e são chamados de regressão, pois seus erros
+já eram conhecidos. Os 12 desafios também são regressão. A seleção automática
+de parâmetros usa apenas validação cruzada no treino. Não houve outra rodada
+de ajustes após consultar o teste novo.
+
+As paráfrases são próximas e há temas e expressões semelhantes entre grupos.
+A autoria compartilhada e a escolha manual dos cenários limitam a independência
+da avaliação. Muitas queixas leves ainda não são cardíacas. Não há representação
+de prevalência ou revisão clínica independente. Nenhuma regra manual foi usada
+para corrigir os rótulos previstos pelo modelo.
+
+Consulta complementar em 11/09/2026: [Ministério da Saúde — Infarto](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infarto)
+e [Scikit-learn — GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html).
+
+## Fontes consultadas na versão inicial
 
 Acesso em 08/09/2026. As fontes abaixo orientam a contextualização dos sintomas;
 não validam o mapa nem os rótulos produzidos para o exercício.

@@ -1,17 +1,41 @@
 frase,situacao,grupo,predicao,acerto
-Sinto dor intensa no peito que não passa há meia hora.,alto risco,A07,alto risco,True
-Uma dor forte no tórax continua mesmo após parar tudo.,alto risco,A07,alto risco,True
-Estou com lábios arroxeados e dificuldade para respirar.,alto risco,A08,baixo risco,False
-Minha boca ficou roxa enquanto eu tentava puxar o ar.,alto risco,A08,alto risco,True
-Uma dor súbita muito forte atravessa o peito e as costas.,alto risco,A11,alto risco,True
-Surgiu uma dor intensa no tórax que se espalhou pelas costas.,alto risco,A11,alto risco,True
-A pressão no peito piora e estou quase apagando.,alto risco,A15,alto risco,True
-Sinto aperto crescente no tórax e sensação de desmaio.,alto risco,A15,alto risco,True
-Senti cansaço leve após correr e já passou com descanso.,baixo risco,B01,baixo risco,True
-Fiquei cansado depois do exercício mas me recuperei por completo.,baixo risco,B01,baixo risco,True
-Meu ombro está levemente dolorido após carregar caixas e está melhorando.,baixo risco,B02,baixo risco,True
-Depois da mudança fiquei com incômodo no ombro que diminui a cada dia.,baixo risco,B02,baixo risco,True
-Meu olho coça levemente depois de ficar em ambiente com poeira.,baixo risco,B12,baixo risco,True
-Fiquei com irritação discreta no olho após limpar a estante.,baixo risco,B12,alto risco,False
-Sinto leve desconforto na lombar após ficar sentado e melhora ao mudar de posição.,baixo risco,B18,baixo risco,True
-Minhas costas incomodaram um pouco na cadeira e melhoraram após levantar.,baixo risco,B18,baixo risco,True
+Enquanto preparava café senti o tórax comprimido e quase caí de tanta fraqueza.,alto risco,A51,alto risco,True
+Na cozinha veio um aperto no peito com fraqueza que mal me deixa ficar em pé.,alto risco,A51,alto risco,True
+A pressão no peito já dura quarenta minutos e meu rosto está sem cor.,alto risco,A52,alto risco,True
+Estou muito pálido e o peso no tórax continua há quase uma hora.,alto risco,A52,alto risco,True
+Não sinto dor nas costas mas mal consigo respirar e estou ficando sonolento.,alto risco,A53,baixo risco,False
+As costas não incomodam; a respiração está muito difícil e tenho dificuldade de me manter acordado.,alto risco,A53,alto risco,True
+Minha garganta arranha um pouco mas agora surgiu uma dor intensa no peito com suor gelado.,alto risco,A54,alto risco,True
+Além da rouquidão leve apareceu pressão torácica forte acompanhada de suor frio.,alto risco,A54,alto risco,True
+Meu coração começou a correr e senti o chão sumir antes de cair desacordado.,alto risco,A55,alto risco,True
+Após batidas rápidas no peito apaguei e acordei no chão.,alto risco,A55,alto risco,True
+Sentado no ônibus senti um peso no peito que alcançou o braço e não cedeu.,alto risco,A56,alto risco,True
+No trajeto começou uma pressão persistente no tórax irradiando para o braço.,alto risco,A56,alto risco,True
+Não tenho febre nem tosse mas a falta de ar é tanta que não termino uma frase.,alto risco,A57,baixo risco,False
+Sem tosse ou febre; estou tão sem fôlego que preciso interromper a fala.,alto risco,A57,baixo risco,False
+Tenho dificuldade para puxar o ar e estou com espuma rosada saindo na tosse.,alto risco,A58,baixo risco,False
+A respiração ficou muito difícil e comecei a tossir uma secreção espumosa rosada.,alto risco,A58,alto risco,True
+Minha mão perdeu a força de repente e não consigo falar as palavras direito.,alto risco,A59,alto risco,True
+Surgiram de uma vez fraqueza no braço e dificuldade para articular a fala.,alto risco,A59,alto risco,True
+A dor no peito era pequena mas se intensificou e agora estou quase perdendo os sentidos.,alto risco,A60,alto risco,True
+O incômodo no tórax aumentou muito e veio uma sensação forte de desmaio.,alto risco,A60,alto risco,True
+Depois de usar luvas fiquei com uma pequena marca no pulso que já está desaparecendo.,baixo risco,B51,baixo risco,True
+A luva apertou um pouco e deixou o punho marcado mas está voltando ao normal.,baixo risco,B51,baixo risco,True
+Não sinto dor no peito ou desmaio; minha queixa é só a pele do nariz ressecada.,baixo risco,B52,baixo risco,True
+O nariz está ressecado por fora; não tenho aperto torácico nem sensação de apagar.,baixo risco,B52,baixo risco,True
+Fiquei com a voz cansada depois da reunião e melhorei com água sem falta de ar.,baixo risco,B53,baixo risco,True
+Falar na reunião ressecou a garganta mas água ajudou e continuo respirando bem.,baixo risco,B53,baixo risco,True
+Meu peito não aperta e não estou suando frio; apenas a etiqueta da roupa arranha a nuca.,baixo risco,B54,alto risco,False
+A nuca ficou irritada pela etiqueta sem pressão no tórax ou suor gelado.,baixo risco,B54,alto risco,False
+A perna ficou marcada pela meia mas a marca sumiu e não tenho dor ou inchaço.,baixo risco,B55,baixo risco,True
+Tirei a meia e a marca desapareceu; minhas pernas estão normais e sem desconforto.,baixo risco,B55,alto risco,False
+Não tenho palpitações nem falta de ar; sinto somente coceira discreta na orelha.,baixo risco,B56,baixo risco,True
+Minha orelha coça um pouco mas o coração não dispara e respiro sem esforço.,baixo risco,B56,baixo risco,True
+Depois de caminhar na areia apareceu uma bolha pequena no calcanhar e nada mais.,baixo risco,B57,baixo risco,True
+A caminhada deixou apenas uma pequena bolha superficial no pé; estou me sentindo bem.,baixo risco,B57,baixo risco,True
+Meu irmão relatou suor frio; comigo só aconteceu uma coceira passageira no pescoço.,baixo risco,B58,baixo risco,True
+A transpiração gelada foi do meu irmão; minha queixa é uma coceira que já passou.,baixo risco,B58,baixo risco,True
+A irritação na ponta do nariz melhorou com a pausa no uso do lenço e não tenho outros sintomas.,baixo risco,B59,baixo risco,True
+Assoar muito irritou a pele do nariz mas agora está melhor e estou bem.,baixo risco,B59,baixo risco,True
+Sem dor no peito ou enjoo; só estou com uma mancha de tinta na mão que não causa incômodo.,baixo risco,B60,baixo risco,True
+Não sinto pressão torácica nem náuseas e a única coisa diferente é tinta na pele sem irritação.,baixo risco,B60,baixo risco,True

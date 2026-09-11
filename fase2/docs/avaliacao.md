@@ -1,54 +1,75 @@
 # Avaliação do classificador
 
-## Resultado da execução
+## Base e método da revisão
 
-Configuração fixa: TF-IDF com unigramas e bigramas, Regressão Logística, seed 42.
-São 64 frases de treino (32 cenários) e 16 de teste (oito cenários), com as
-paráfrases mantidas juntas. O teste não foi usado para escolher parâmetros.
+A base passou de 80 para 240 frases, em 120 cenários com duas paráfrases:
+184 frases de treino, 40 de teste novo e 16 do teste antigo para regressão.
+O manifesto mantém as paráfrases juntas em todas as divisões.
 
-| Medida no teste | Valor |
-| --- | ---: |
-| Acurácia | 87,5% (14/16) |
-| Acurácia do baseline | 50,0% |
-| Precisão de alto risco | 87,5% |
-| Recall de alto risco | 87,5% |
-| F1 de alto risco | 0,875 |
-| F1 de baixo risco | 0,875 |
-| Falsos negativos de alto risco | 1 |
-| Falsos positivos de alto risco | 1 |
+Comparamos quatro configurações apenas na validação cruzada do treino: TF-IDF
+com n-gramas (1,2) ou (1,3) e Regressão Logística com C=1 ou C=4. O maior F1 macro
+selecionou bigramas e C=4. Com seed 42, as acurácias das quatro divisões foram
+89,13%, 91,30%, 100% e 86,96% (média 91,85%). Esses valores participaram da
+seleção e podem ser otimistas; não substituem o teste reservado.
 
-A validação cruzada no treino teve acurácias de 81,25%, 87,5%, 68,75% e
-93,75% (média 82,81%). Essa variação reforça a sensibilidade à composição da
-amostra. O arquivo `outputs/metricas.json` registra versões, hash da base,
-divisões e valores completos.
+## Comparação no mesmo teste novo
 
-## O que os erros mostram
+Reproduzimos a configuração anterior nos mesmos 64 exemplos originais de treino
+e avaliamos as duas versões nas mesmas 40 frases novas.
 
-O relato “Estou com lábios arroxeados e dificuldade para respirar.” recebeu
-baixo risco, apesar de seu rótulo didático ser alto risco. O cenário foi
-reservado ao teste; os termos e combinações não foram suficientemente cobertos
-no treino. Esse erro mostra o limite de generalização do vocabulário, mesmo
-com uma acurácia global aparentemente boa.
+| Medida | Original: 64 frases de treino | Revisado: 184 frases de treino |
+| --- | ---: | ---: |
+| Acurácia | 70% (28/40) | 82,5% (33/40) |
+| Recall de alto risco | 75% | 80% |
+| F1 macro | 0,699 | 0,825 |
+| Falsos negativos | 5 | 4 |
+| Falsos positivos | 7 | 3 |
 
-O relato “Fiquei com irritação discreta no olho após limpar a estante.” recebeu
-alto risco, embora seu rótulo fosse baixo risco. A classificação lexical não
-compreende que a frase descreve uma queixa leve nesse exemplo.
+O baseline que sempre prevê a classe mais frequente acertou 50%. Na revisão,
+a precisão de alto risco foi 84,21% e o F1 dessa classe foi 0,821. A matriz tem
+17 acertos de baixo risco, três falsos positivos, quatro falsos negativos e
+16 acertos de alto risco.
 
-Nos 12 casos adicionais, houve 10 acertos. As frases “Não tenho falta de ar nem
-dor no peito; só espirrei duas vezes.” e “Estou com coriza leve e não sinto dor
-no peito.” foram classificadas como alto risco. Manter negações no TF-IDF e
-usar bigramas não bastou para interpretar o contexto. Esses casos são expostos
-como falhas; não foi acrescentada uma regra para ocultar os resultados do modelo.
+Houve melhora nesse conjunto. Tanto os dados quanto a regularização mudaram;
+a comparação não isola o efeito da quantidade de frases. O teste tem apenas
+20 cenários e a mesma origem sintética do treino. Um erro representa 2,5 pontos
+percentuais. As métricas não validam uso em pacientes.
 
-## Vieses e próximos passos
+## Erros que permanecem
 
-O equilíbrio de classes é artificial, muitos exemplos leves possuem vocabulário
-não cardíaco e todas as frases têm a mesma origem de construção. A divisão por
-cenário reduz a repetição entre conjuntos, mas não elimina esses vieses. O teste
-de identidade não substitui uma avaliação demográfica: faltam grupos reais
-representativos e rótulos revisados independentemente.
+Os quatro falsos negativos do teste novo foram:
 
-Uma evolução deverá incluir casos linguísticos mais diversos, mais cenários
-ambíguos, revisão dos rótulos e avaliação externa. O conjunto de teste atual
-deve permanecer como referência desta versão; novos ajustes precisam de um
-novo teste reservado para evitar adaptação às respostas já conhecidas.
+- A53: negação de dor nas costas seguida de dificuldade respiratória e sonolência.
+- A57: duas paráfrases que negam febre e tosse, mas afirmam falta de ar que impede falar.
+- A58: dificuldade para respirar com espuma rosada na tosse, em uma das paráfrases.
+
+Os três falsos positivos foram as duas frases B54, que negam sintomas torácicos
+e relatam irritação da etiqueta na nuca, e uma frase B55 sobre uma marca de meia
+que desapareceu. A classificação ainda depende de vocabulário e não compreende
+com segurança o alcance das negações.
+
+## Regressão e histórico
+
+A versão original acertou 14/16 (87,5%) no teste antigo e 10/12 desafios. A revisão
+acertou 15/16 (93,75%) no teste antigo e 12/12 desafios. As duas negações que
+falhavam nos desafios passaram. A frase sobre lábios arroxeados e dificuldade
+para respirar continua sendo um falso negativo no teste antigo.
+
+Os erros conhecidos motivaram a ampliação, então esses conjuntos são regressão,
+não nova avaliação independente. Os 87,5% antigos e os 82,5% atuais foram medidos
+em testes diferentes. A comparação entre versões é a tabela das mesmas 40 frases.
+
+## Governança e continuidade
+
+As métricas e hashes estão em `outputs/metricas.json`; as configurações avaliadas
+estão em `comparacao_cv.csv`; `comparacao_modelos.csv` compara as versões.
+`predicoes_teste.csv`, `predicoes_regressao.csv` e `resultados_desafios.csv`
+preservam os erros individuais. Os quatro exemplos de troca de identidade no
+notebook verificam sensibilidade textual, sem comprovar fairness demográfica.
+
+Os rótulos são didáticos, as classes são artificialmente equilibradas e muitos
+casos leves têm vocabulário não cardíaco. As novas frases não tiveram revisão
+clínica independente. Mais exemplos da mesma autoria não substituem revisão
+dos rótulos, contextos diversos e dados externos. Se os erros do teste atual
+orientarem outra versão, ele também deverá ser tratado como regressão, com uma
+nova avaliação reservada ou externa.
